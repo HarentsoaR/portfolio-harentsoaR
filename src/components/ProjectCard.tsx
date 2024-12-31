@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
 
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
   technologies: string[];
+  git?: string[];
 }
 
-export function ProjectCard({ title, description, image, technologies }: ProjectCardProps) {
+export function ProjectCard({ title, description, image, technologies, git }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -18,7 +20,6 @@ export function ProjectCard({ title, description, image, technologies }: Project
       const rect = cardRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Check if the card is in the viewport
       if (rect.top <= windowHeight && rect.bottom >= 0) {
         setIsVisible(true);
       } else {
@@ -29,7 +30,7 @@ export function ProjectCard({ title, description, image, technologies }: Project
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check visibility on mount
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -39,28 +40,25 @@ export function ProjectCard({ title, description, image, technologies }: Project
   return (
     <motion.div
       ref={cardRef}
-      className="bg-[#31363F] rounded-lg shadow-lg overflow-hidden"
+      className="bg-[#31363F] rounded-lg shadow-lg overflow-hidden relative"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.5 }}
       initial={{ opacity: 0, y: 20 }}
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
     >
-      <Image
-        src={image}
-        alt={title}
-        width={400}
-        height={200}
-        className="w-full h-48 object-cover"
-      />
+      <div className="relative h-48">
+        <Image
+          src={image}
+          alt={title}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-t-lg"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <h3 className="text-xl font-bold text-white text-center px-4">{title}</h3>
+        </div>
+      </div>
       <div className="p-6">
-        <motion.h3
-          className="text-xl font-bold mb-2 text-[#76ABAE]"
-          initial={{ opacity: 0, y: 10 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-          transition={{ duration: 0.3, delay: 0.1 }}
-        >
-          {title}
-        </motion.h3>
         <motion.p
           className="text-[#EEEEEE] mb-4 font-light"
           initial={{ opacity: 0, y: 10 }}
@@ -69,7 +67,7 @@ export function ProjectCard({ title, description, image, technologies }: Project
         >
           {description}
         </motion.p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mb-4">
           {technologies.map((tech) => (
             <motion.span
               key={tech}
@@ -82,7 +80,32 @@ export function ProjectCard({ title, description, image, technologies }: Project
             </motion.span>
           ))}
         </div>
+        {git && git.length > 0 && (
+          <motion.div
+            className="mt-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+          >
+            <h4 className="text-sm font-semibold mb-2 text-[#76ABAE]">GitHub Repositories:</h4>
+            <div className="flex flex-wrap gap-2">
+              {git.map((link, index) => (
+                <a
+                  key={index}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-[#EEEEEE] hover:text-[#76ABAE] transition-colors text-sm"
+                >
+                  <FaGithub className="mr-1" />
+                  Repo {index + 1}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );
 }
+
