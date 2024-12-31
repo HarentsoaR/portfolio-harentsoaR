@@ -6,7 +6,7 @@ import { useProfile } from '@/contexts/ProfileContext';
 
 export function ProfileSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [, setIsVisible] = useState(false);
   const { showProfile } = useProfile();
 
   const handleScroll = () => {
