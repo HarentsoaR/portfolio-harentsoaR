@@ -62,7 +62,7 @@ export function ProfileSection() {
               height: { duration: 0.4 }
             }}
           >
-            <div className="py-20">
+            <div className="py-10">
               <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12">
                 <motion.div
                   className="w-full lg:w-1/3 flex flex-col items-center"

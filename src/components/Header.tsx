@@ -18,10 +18,6 @@ export function Header() {
     if (path === '/contact') {
       if (pathname === '/') {
         scrollToElement('contact')
-      } else {
-        // router.push('/').then(() => {
-        //   setTimeout(() => scrollToElement('contact'), 100)
-        // })
       }
     } else {
       router.push(path)
@@ -34,11 +30,11 @@ export function Header() {
         <ul className="flex justify-between items-center">
           <li>
             <Link href="/" className="text-xl font-bold text-[#76ABAE]">
-              Harentsoa
+              Portfolio
             </Link>
           </li>
           <motion.li className="flex space-x-4">
-            {['Career', 'Contact'].map((item) => (
+            {['Home', 'Career', 'Contact'].map((item) => (
               <motion.div
                 key={item}
                 whileHover={{ scale: 1.1 }}

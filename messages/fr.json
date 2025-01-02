@@ -1,0 +1,17 @@
+{
+    "name": "Harentsoa",
+    "hero": {
+      "learnMore": "En savoir plus",
+      "hideProfile": "Masquer le profil"
+    },
+    "nav": {
+      "home": "Accueil",
+      "career": "Carrière",
+      "contact": "Contact"
+    },
+    "projects": {
+      "title": "Projets en vedette"
+    }
+  }
+  
+  

@@ -1,0 +1,17 @@
+{
+    "name": "Harentsoa",
+    "hero": {
+      "learnMore": "Learn More",
+      "hideProfile": "Hide Profile"
+    },
+    "nav": {
+      "home": "Home",
+      "career": "Career",
+      "contact": "Contact"
+    },
+    "projects": {
+      "title": "Featured Projects"
+    }
+  }
+  
+  

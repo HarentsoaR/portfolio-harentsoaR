@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const Bio = () => {
-  const text = "I am currently pursuing my Master’s degree in Information Technology, driven by a lifelong passion for technology that began in my teenage years. My fascination with IT has evolved over time, leading me to explore the intricacies of how technology works. Being immersed in this field is truly exciting, especially as I witness the rapid advancements and innovations shaping our world today.";
+  const text = "I am currently pursuing a Master’s degree in Information Technology, motivated by a longstanding passion for technology that originated in my teenage years. My innate curiosity has led me to delve into the complexities of the tech landscape, and I derive immense satisfaction from observing the swift advancements and innovations that continuously reshape our world.";
 
   return (
     <motion.p className="text-xl mb-8 text-[#EEEEEE] font-extralight">
