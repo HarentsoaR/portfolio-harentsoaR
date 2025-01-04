@@ -24,24 +24,24 @@ const messages: Messages = {
   fr: frMessages,
 };
 
+// Update the RootLayout function to match expected types
 export default function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: string }; // Ensure this matches the expected type
 }) {
   // Validate the locale
-  if (!['en', 'fr'].includes(locale)) notFound();
+  if (!['en', 'fr'].includes(params.locale)) notFound();
 
   return (
-    <html lang={locale}>
+    <html lang={params.locale}>
       <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={messages[locale as keyof Messages]}>
+        <NextIntlClientProvider locale={params.locale} messages={messages[params.locale as keyof Messages]}>
           <div className='flex-grow'>{children}</div>
         </NextIntlClientProvider>
       </body>
     </html>
   );
 }
-
