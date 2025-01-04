@@ -26,14 +26,16 @@ const messages: Messages = {
   fr: frMessages,
 };
 
-// Update the RootLayout function to match expected types
-export default function RootLayout({
-  children,
-  params,
-}: {
+// Define the layout props type
+interface LayoutProps {
   children: React.ReactNode;
-  params: { locale: string };
-}) {
+  params: {
+    locale: string;
+  };
+}
+
+// Update the RootLayout function to match expected types
+export default function RootLayout({ children, params }: LayoutProps) {
   // Validate the locale
   if (!['en', 'fr'].includes(params.locale)) notFound();
 
