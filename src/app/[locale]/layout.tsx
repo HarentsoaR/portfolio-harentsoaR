@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation';
 import enMessages from '../../../messages/en.json';
 import frMessages from '../../../messages/fr.json';
 import './globals.css';
+import { Suspense } from 'react';
+import { Loader } from '@/components/Loader';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,7 +32,7 @@ export default function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string }; // Ensure this matches the expected type
+  params: { locale: string };
 }) {
   // Validate the locale
   if (!['en', 'fr'].includes(params.locale)) notFound();
@@ -39,7 +41,9 @@ export default function RootLayout({
     <html lang={params.locale}>
       <body className={inter.className}>
         <NextIntlClientProvider locale={params.locale} messages={messages[params.locale as keyof Messages]}>
-          <div className='flex-grow'>{children}</div>
+          <Suspense fallback={<Loader />}>
+            <div className='flex-grow'>{children}</div>
+          </Suspense>
         </NextIntlClientProvider>
       </body>
     </html>

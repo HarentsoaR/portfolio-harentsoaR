@@ -3,11 +3,13 @@ import { FaGithub, FaLinkedin, FaBirthdayCake, FaGraduationCap, FaMapMarkerAlt, 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { useProfile } from '@/contexts/ProfileContext';
+import { useTranslations } from 'next-intl';
 
 export function ProfileSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [, setIsVisible] = useState(false);
   const { showProfile } = useProfile();
+  const t = useTranslations('ProfileSection'); // Access translations for ProfileSection
 
   const handleScroll = () => {
     if (sectionRef.current) {
@@ -32,11 +34,11 @@ export function ProfileSection() {
   }, []);
 
   const personalInfo = [
-    { icon: FaBirthdayCake, text: 'October 11, 2002' },
-    { icon: FaGraduationCap, text: 'Master\'s in Computer Science' },
-    { icon: FaMapMarkerAlt, text: 'Antananarivo, Madagascar' },
-    { icon: FaPhone, text: '+261 34 46 564 59' },
-    { icon: FaEnvelope, text: 'randriamaholimanana1@gmail.com' },
+    { icon: FaBirthdayCake, text: t('personalInfo.birthday') }, // Use translation
+    { icon: FaGraduationCap, text: t('personalInfo.degree') }, // Use translation
+    { icon: FaMapMarkerAlt, text: t('personalInfo.location') }, // Use translation
+    { icon: FaPhone, text: t('personalInfo.phone') }, // Use translation
+    { icon: FaEnvelope, text: t('personalInfo.email') }, // Use translation
   ];
 
   const languages = [
@@ -83,7 +85,7 @@ export function ProfileSection() {
                     Harentsoa RANDDRIAMAHOLIMANANA
                   </h2>
                   <p className="text-xl mb-6 text-[#EEEEEE] font-light text-center">
-                    Full Stack Developer
+                    {t('status')} {/* Use translation for status */}
                   </p>
                   <div className="flex justify-center gap-4 mb-6">
                     <motion.a
@@ -113,7 +115,7 @@ export function ProfileSection() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  <h3 className="text-2xl font-semibold mb-6 text-[#76ABAE]">About Me</h3>
+                  <h3 className="text-2xl font-semibold mb-6 text-[#76ABAE]">{t('aboutMe')}</h3> {/* Use translation for About Me */}
                   <ul className="space-y-4 mb-8">
                     {personalInfo.map((item, index) => (
                       <motion.li 
@@ -129,7 +131,7 @@ export function ProfileSection() {
                     ))}
                   </ul>
                   
-                  <h3 className="text-2xl font-semibold mb-6 text-[#76ABAE]">Language Proficiency</h3>
+                  <h3 className="text-2xl font-semibold mb-6 text-[#76ABAE]">{t('languageProficiency')}</h3> {/* Use translation for Language Proficiency */}
                   <div className="space-y-4">
                     {languages.map((lang, index) => (
                       <motion.div 
@@ -162,4 +164,3 @@ export function ProfileSection() {
     </section>
   );
 }
-

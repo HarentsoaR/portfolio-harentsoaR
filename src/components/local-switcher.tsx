@@ -2,30 +2,62 @@
 
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { ChangeEvent, useTransition } from 'react';
+import { useTransition } from 'react';
+import Image from 'next/image';
+import { useState } from 'react';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const localActive = useLocale();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = e.target.value;
+  const onSelectChange = (locale: string) => {
     startTransition(() => {
-      router.replace(`/${nextLocale}`);
+      router.replace(`/${locale}`);
+      setIsOpen(false); // Close the dropdown after selection
     });
   };
+
   return (
-    <label className='border-1 rounded'>
-      <select
-        defaultValue={localActive}
-        className='bg-gray-800 text-white'
-        onChange={onSelectChange}
-        disabled={isPending}
+    <div className='relative inline-block'>
+      <button
+        className='border rounded bg-gray-800 text-white flex items-center'
+        onClick={() => setIsOpen(prev => !prev)}
       >
-        <option value='en'>English</option>
-        <option value='fr'>French</option>
-      </select>
-    </label>
+        <Image
+          src={localActive === 'fr' ? "/usages/france.png" : "/usages/united-kingdom.png"}
+          alt="Language Flag"
+          width={20}
+          height={20}
+          className="rounded-full mr-2"
+        />
+        <span>{localActive === 'fr' ? 'fr' : 'en'}</span>
+      </button>
+      {isOpen && (
+        <ul className='absolute left-0 mt-1 bg-gray-800 rounded shadow-lg z-10'>
+          <li onClick={() => onSelectChange('en')} className='flex items-center p-2 cursor-pointer hover:bg-gray-700 transition'>
+            <Image
+              src="/usages/united-kingdom.png"
+              alt="English"
+              width={20}
+              height={20}
+              className="rounded-full mr-2"
+            />
+            <span className='text-white'>en</span>
+          </li>
+          <li onClick={() => onSelectChange('fr')} className='flex items-center p-2 cursor-pointer hover:bg-gray-700 transition'>
+            <Image
+              src="/usages/france.png"
+              alt="French"
+              width={20}
+              height={20}
+              className="rounded-full mr-2"
+            />
+            <span className='text-white'>fr</span>
+          </li>
+        </ul>
+      )}
+    </div>
   );
 }

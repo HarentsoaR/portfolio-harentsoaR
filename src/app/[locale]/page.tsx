@@ -1,14 +1,17 @@
 "use client";
 
-import { Hero } from '@/components/Hero';
-import { ProfileSection } from '@/components/ProfileSection';
-import { ProjectCard } from '@/components/ProjectCard';
-import { Skills } from '@/components/Skills';
 import { Contact } from '@/components/Contact';
 import { ProfileProvider } from '@/contexts/ProfileContext';
 import { Footer } from '@/components/Footer';
-import { Header } from '@/components/Header';
 import { useTranslations } from 'next-intl';
+import { Loader } from '@/components/Loader';
+import { Suspense, lazy } from 'react';
+
+const Hero = lazy(() => import('@/components/Hero').then(module => ({ default: module.Hero })));
+const ProfileSection = lazy(() => import('@/components/ProfileSection').then(module => ({ default: module.ProfileSection })));
+const ProjectCard = lazy(() => import('@/components/ProjectCard').then(module => ({ default: module.ProjectCard })));
+const Skills = lazy(() => import('@/components/Skills').then(module => ({ default: module.Skills })));
+const Header = lazy(() => import('@/components/Header').then(module => ({ default: module.Header })));
 
 const projects = [
   {
@@ -73,14 +76,18 @@ const projects = [
 ];
 
 export default function Home() {
-  const t = useTranslations('IndexPage'); // Move this inside the component
+  const t = useTranslations('IndexPage');
 
   return (
     <ProfileProvider>
       <Header />
       <div className="font-[family-name:var(--font-geist-sans)] bg-[#222831] text-[#EEEEEE]">
-        <Hero />
-        <ProfileSection />
+        <Suspense fallback={<Loader />}>
+          <Hero />
+        </Suspense>
+        <Suspense fallback={<Loader />}>
+          <ProfileSection />
+        </Suspense>
         <section className="py-10 bg-[#31363F]">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-8 text-[#76ABAE]">
@@ -88,20 +95,22 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project) => (
-                <ProjectCard 
-                  key={project.key} 
-                  title={t(project.key)} 
-                  description={t(project.descriptionKey)} 
-                  image={project.image} 
-                  technologies={project.technologies} 
-                  git={project.git} 
-                />
+                <Suspense key={project.key} fallback={<Loader />}>
+                  <ProjectCard
+                    title={t(project.key)}
+                    description={t(project.descriptionKey)}
+                    image={project.image}
+                    technologies={project.technologies}
+                    git={project.git}
+                  />
+                </Suspense>
               ))}
             </div>
           </div>
         </section>
-        <Skills />
-        <Contact />
+        <Suspense fallback={<Loader />}>
+          <Skills />
+        </Suspense>
         <Footer />
       </div>
     </ProfileProvider>
