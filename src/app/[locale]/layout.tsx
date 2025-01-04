@@ -26,23 +26,23 @@ const messages: Messages = {
   fr: frMessages,
 };
 
-// Define the layout props type
-interface LayoutProps {
-  children: React.ReactNode;
-  params: {
-    locale: string;
-  };
-}
-
 // Update the RootLayout function to match expected types
-export default function RootLayout({ children, params }: LayoutProps) {
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>; // Adjusting to expect a Promise
+}) {
+  const resolvedParams = await params; // Await the params
+
   // Validate the locale
-  if (!['en', 'fr'].includes(params.locale)) notFound();
+  if (!['en', 'fr'].includes(resolvedParams.locale)) notFound();
 
   return (
-    <html lang={params.locale}>
+    <html lang={resolvedParams.locale}>
       <body className={inter.className}>
-        <NextIntlClientProvider locale={params.locale} messages={messages[params.locale as keyof Messages]}>
+        <NextIntlClientProvider locale={resolvedParams.locale} messages={messages[resolvedParams.locale as keyof Messages]}>
           <Suspense fallback={<Loader />}>
             <div className='flex-grow'>{children}</div>
           </Suspense>
