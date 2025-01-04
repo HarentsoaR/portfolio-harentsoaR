@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 export default function LocalSwitcher() {
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
   const router = useRouter();
   const localActive = useLocale();
   const [isOpen, setIsOpen] = useState(false);

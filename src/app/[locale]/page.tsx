@@ -111,6 +111,9 @@ export default function Home() {
         <Suspense fallback={<Loader />}>
           <Skills />
         </Suspense>
+        <section id="contact">
+          <Contact />
+        </section>
         <Footer />
       </div>
     </ProfileProvider>
