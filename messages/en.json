@@ -1,83 +1,17 @@
 {
-  "Header": {
-    "portfolio": "Portfolio",
-    "home": "Home",
-    "career": "Career",
-    "contact": "Contact"
-  },
-  "Footer": {
-    "allRightsReserved": "HarentsoaR. All rights reserved."
-  },
-  "Hero": {
-    "learnMore": "Learn More",
-    "hideProfile": "Hide Profile"
-  },
-  "ProfileSection": {
-    "aboutMe": "About Me",
-    "status": "Full Stack Developer",
-    "languageProficiency": "Language Proficiency",
-    "personalInfo": {
-      "birthday": "October 11, 2002",
-      "degree": "Master's in Computer Science",
-      "location": "Antananarivo, Madagascar",
-      "phone": "+261 34 46 564 59",
-      "email": "randriamaholimanana1@gmail.com"
+    "name": "Harentsoa",
+    "hero": {
+      "learnMore": "Learn More",
+      "hideProfile": "Hide Profile"
+    },
+    "nav": {
+      "home": "Home",
+      "career": "Career",
+      "contact": "Contact"
+    },
+    "projects": {
+      "title": "Featured Projects"
     }
-  },
-  "ProjectCard": {
-    "gitHubRepositories": "GitHub Repositories:"
-  },
-  "IndexPage": {
-    "featuredProjects": "Featured Projects",
-    "schoolManagementSystem": "School Management System",
-    "schoolManagementSystemDescription": "An all-in-one platform designed for managing school operations, built with React for the frontend and Spring Boot for the backend.",
-    "wineManagementApplication": "Wine Management Application",
-    "wineManagementApplicationDescription": "A comprehensive solution for wine production and sales, developed using Spring Boot and Thymeleaf for a seamless user experience.",
-    "personalPortfolioWebsite": "Personal Portfolio Website",
-    "personalPortfolioWebsiteDescription": "A responsive and visually appealing portfolio website created with Next.js and Tailwind CSS to showcase projects and skills.",
-    "carSalesManagementPlatform": "Car Sales Management Platform",
-    "carSalesManagementPlatformDescription": "A full-stack application developed in PHP for managing car sales, featuring user-friendly interfaces and robust functionality.",
-    "realTimeWeatherApplication": "Real-Time Weather Application",
-    "realTimeWeatherApplicationDescription": "An Android mobile application that provides real-time weather updates and forecasts, developed with React Native.",
-    "scientificSocialNetwork": "Scientific Social Network",
-    "scientificSocialNetworkDescription": "A dedicated social networking platform for scientists to connect, share, and collaborate, built with Next.js and NestJS.",
-    "windowsAdministrationToolkit": "Windows Administration Toolkit",
-    "windowsAdministrationToolkitDescription": "A project focused on tools and techniques for Windows system administration, including VirtualBox and PowerShell.",
-    "parallelAndDistributedProgramming": "Parallel and Distributed Programming",
-    "parallelAndDistributedProgrammingDescription": "An implementation project that explores parallel and distributed programming by efficiently utilizing CPU cores.",
-    "dentalPracticeManagementSystem": "Dental Practice Management System",
-    "dentalPracticeManagementSystemDescription": "A project aimed at streamlining dental practice operations through automation of patient registration, appointment scheduling, and billing processes."
-  },
-  "Bio": {
-    "description": "I am currently pursuing a Master’s degree in Information Technology, motivated by a longstanding passion for technology that originated in my teenage years. My innate curiosity has led me to delve into the complexities of the tech landscape, and I derive immense satisfaction from observing the swift advancements and innovations that continuously reshape our world."
-  },
-  "Contact": {
-    "getInTouch": "Get in Touch",
-    "messageSent": "Message sent successfully!",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "sendMessage": "Send Message"
-  },
-  "Career": {
-    "developmentExperience": "Development Experience",
-    "education": "Education",
-    "professionalExperience": "Professional Experience",
-    "masterDegree": "Master in Computer Science",
-    "bachelorDegree": "Bachelor in Computer Science",
-    "baccalaureate": "Baccalaureate Series D",
-    "eni": "ENI (National School of Computer Science)",
-    "highSchool": "High School",
-    "period2023": "2023 - 2025",
-    "period2020": "2020 - 2023",
-    "completed2019": "Completed in 2019",
-    "fullStackDeveloper": "Full Stack Developer",
-    "beysOutsourcing": "Beys Outsourcing Service",
-    "position2023": "2023",
-    "fullStackDescription": "Developed full-stack applications using ReactJS, NodeJS, and PHP.",
-    "codeIgniterDeveloper": "CodeIgniter 4 Developer",
-    "oneEnvironment": "ONE (National Office for the Environment)",
-    "position2022": "2022",
-    "codeIgniterDescription": "Worked on environmental management systems using CodeIgniter 4 framework."
   }
-}
+  
+  

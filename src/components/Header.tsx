@@ -1,33 +1,28 @@
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { usePathname, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
-import { scrollToElement } from '@/utils/scrollUtils';
-import LocalSwitcher from './local-switcher';
-import { useTranslations } from 'next-intl';
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect } from 'react'
+import { scrollToElement } from '@/utils/scrollUtils'
 
 export function Header() {
-  const pathname = usePathname();
-  const router = useRouter();
-  const t = useTranslations('Header'); // Use the appropriate namespace for translations
+  const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     if (pathname === '/contact') {
-      scrollToElement('contact');
+      scrollToElement('contact')
     }
-  }, [pathname]);
+  }, [pathname])
 
   const handleNavigation = (path: string) => {
-    if (path === '/home') {
-      router.push('/'); // Redirect to main route
-    } else if (path === '/contact') {
+    if (path === '/contact') {
       if (pathname === '/') {
-        scrollToElement('contact');
+        scrollToElement('contact')
       }
     } else {
-      router.push(path);
+      router.push(path)
     }
-  };
+  }
 
   return (
     <header className="bg-[#222831] text-[#EEEEEE] font-[family-name:var(--font-geist-sans)]">
@@ -35,7 +30,7 @@ export function Header() {
         <ul className="flex justify-between items-center">
           <li>
             <Link href="/" className="text-xl font-bold text-[#76ABAE]">
-              {t('portfolio')} {/* Use translation for Portfolio */}
+              Portfolio
             </Link>
           </li>
           <motion.li className="flex space-x-4">
@@ -51,14 +46,14 @@ export function Header() {
                     pathname === `/${item.toLowerCase()}` ? 'text-[#76ABAE]' : 'text-[#EEEEEE] hover:text-[#76ABAE]'
                   }`}
                 >
-                  {t(item.toLowerCase())} {/* Use translations for each item */}
+                  {item}
                 </button>
               </motion.div>
             ))}
-            <LocalSwitcher />
           </motion.li>
         </ul>
       </nav>
     </header>
-  );
+  )
 }
+

@@ -1,11 +1,9 @@
-import Bio from '@/utils/Bio';
-import { motion } from 'framer-motion';
-import { useProfile } from '@/contexts/ProfileContext';
-import { useTranslations } from 'next-intl';
+import Bio from '@/utils/Bio'
+import { motion } from 'framer-motion'
+import { useProfile } from '@/contexts/ProfileContext'
 
 export function Hero() {
   const { toggleProfile, showProfile } = useProfile();
-  const t = useTranslations('Hero'); // Use the appropriate namespace for translations
 
   const handleLearnMore = () => {
     toggleProfile();
@@ -30,11 +28,12 @@ export function Hero() {
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.4}}
         >
-          {showProfile ? t('hideProfile') : t('learnMore')} {/* Use translations here */}
+          {showProfile ? 'Hide Profile' : 'Learn More'}
         </motion.button>
       </div>
     </section>
-  );
+  )
 }
+

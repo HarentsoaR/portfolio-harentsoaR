@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
 
 const Bio = () => {
-  const t = useTranslations('Bio');
-  const text = t('description');
+  const text = "I am currently pursuing a Master’s degree in Information Technology, motivated by a longstanding passion for technology that originated in my teenage years. My innate curiosity has led me to delve into the complexities of the tech landscape, and I derive immense satisfaction from observing the swift advancements and innovations that continuously reshape our world.";
 
   return (
     <motion.p className="text-xl mb-8 text-[#EEEEEE] font-extralight">

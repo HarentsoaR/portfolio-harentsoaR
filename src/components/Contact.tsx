@@ -1,15 +1,13 @@
-'use client';
+'use client'
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
-import { useTranslations } from 'next-intl';
 
 export function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
-  const t = useTranslations('Contact'); // Use the appropriate namespace for translations
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,8 +34,8 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 bg-[#31363F] text-[#EEEEEE]">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-8 text-[#76ABAE]">{t('getInTouch')}</h2>
-        {success && <p className="text-center text-green-500 mb-4">{t('messageSent')}</p>}
+        <h2 className="text-3xl font-bold text-center mb-8 text-[#76ABAE]">Get in Touch</h2>
+        {success && <p className="text-center text-green-500 mb-4">Message sent successfully!</p>}
         <motion.form
           onSubmit={handleSubmit}
           className="max-w-lg mx-auto"
@@ -47,7 +45,7 @@ export function Contact() {
           viewport={{ once: true }}
         >
           <div className="mb-4">
-            <label htmlFor="name" className="block mb-2 font-medium">{t('name')}</label>
+            <label htmlFor="name" className="block mb-2 font-medium">Name</label>
             <input
               type="text"
               id="name"
@@ -58,7 +56,7 @@ export function Contact() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block mb-2 font-medium">{t('email')}</label>
+            <label htmlFor="email" className="block mb-2 font-medium">Email</label>
             <input
               type="email"
               id="email"
@@ -69,7 +67,7 @@ export function Contact() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="message" className="block mb-2 font-medium">{t('message')}</label>
+            <label htmlFor="message" className="block mb-2 font-medium">Message</label>
             <textarea
               id="message"
               value={message}
@@ -85,7 +83,7 @@ export function Contact() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {t('sendMessage')} {/* Use translation for Send Message */}
+            Send Message
           </motion.button>
         </motion.form>
       </div>
