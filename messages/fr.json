@@ -1,17 +1,83 @@
 {
-    "name": "Harentsoa",
-    "hero": {
-      "learnMore": "En savoir plus",
-      "hideProfile": "Masquer le profil"
-    },
-    "nav": {
-      "home": "Accueil",
-      "career": "Carrière",
-      "contact": "Contact"
-    },
-    "projects": {
-      "title": "Projets en vedette"
+  "Header": {
+    "portfolio": "Portfolio",
+    "home": "Accueil",
+    "career": "Carrière",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "allRightsReserved": "HarentsoaR. Tous droits réservés."
+  },
+  "Hero": {
+    "learnMore": "En savoir plus",
+    "hideProfile": "Cacher le profil"
+  },
+  "ProfileSection": {
+    "aboutMe": "À propos de moi",
+    "status": "Developpeur Fullstack",
+    "languageProficiency": "Compétences linguistiques",
+    "personalInfo": {
+      "birthday": "11 octobre 2002",
+      "degree": "Master en Informatique",
+      "location": "Antananarivo, Madagascar",
+      "phone": "+261 34 46 564 59",
+      "email": "randriamaholimanana1@gmail.com"
     }
+  },
+  "ProjectCard": {
+    "gitHubRepositories": "Dépôts GitHub :"
+  },
+  "IndexPage": {
+    "featuredProjects": "Projets Présentés",
+    "schoolManagementSystem": "Système de Gestion Scolaire",
+    "schoolManagementSystemDescription": "Une plateforme tout-en-un conçue pour gérer les opérations scolaires, construite avec React pour le frontend et Spring Boot pour le backend.",
+    "wineManagementApplication": "Application de Gestion du Vin",
+    "wineManagementApplicationDescription": "Une solution complète pour la production et la vente de vin, développée avec Spring Boot et Thymeleaf pour une expérience utilisateur fluide.",
+    "personalPortfolioWebsite": "Site Web de Portfolio Personnel",
+    "personalPortfolioWebsiteDescription": "Un site web de portfolio réactif et visuellement attrayant créé avec Next.js et Tailwind CSS pour mettre en valeur des projets et des compétences.",
+    "carSalesManagementPlatform": "Plateforme de Gestion des Ventes de Voitures",
+    "carSalesManagementPlatformDescription": "Une application full-stack développée en PHP et Java pour gérer les ventes de voitures, avec des interfaces conviviales et une fonctionnalité robuste.",
+    "realTimeWeatherApplication": "Application Météo en Temps Réel",
+    "realTimeWeatherApplicationDescription": "Une application mobile Android qui fournit des mises à jour et des prévisions météorologiques en temps réel, développée avec React Native.",
+    "scientificSocialNetwork": "Réseau Social Scientifique",
+    "scientificSocialNetworkDescription": "Une plateforme de réseau social dédiée aux scientifiques pour se connecter, partager et collaborer, construite avec Next.js et NestJS.",
+    "windowsAdministrationToolkit": "Kit d'Outils d'Administration Windows",
+    "windowsAdministrationToolkitDescription": "Un projet axé sur les outils et techniques pour l'administration des systèmes Windows, y compris VirtualBox et PowerShell.",
+    "parallelAndDistributedProgramming": "Programmation Parallèle et Distribuée",
+    "parallelAndDistributedProgrammingDescription": "Un projet d'implémentation qui explore la programmation parallèle et distribuée en utilisant efficacement les cœurs CPU.",
+    "dentalPracticeManagementSystem": "Système de Gestion des Pratiques Dentaires",
+    "dentalPracticeManagementSystemDescription": "Un projet visant à rationaliser les opérations des pratiques dentaires grâce à l'automatisation de l'enregistrement des patients, de la planification des rendez-vous et des processus de facturation."
+  },
+  "Bio": {
+    "description": "Je poursuis actuellement un Master en Informatique, motivé par une passion de longue date pour la technologie qui a commencé dans mon adolescence. Ma curiosité innée m'a conduit à explorer les complexités du paysage technologique, et je tire une immense satisfaction à observer les avancées rapides et les innovations qui redéfinissent continuellement notre monde."
+  },
+  "Contact": {
+    "getInTouch": "Contactez-moi",
+    "messageSent": "Message envoyé avec succès !",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "sendMessage": "Envoyer le message"
+  },
+  "Career": {
+    "developmentExperience": "Expérience de développement",
+    "education": "Éducation",
+    "professionalExperience": "Expérience professionnelle",
+    "masterDegree": "Master en informatique",
+    "bachelorDegree": "Licence en informatique",
+    "baccalaureate": "Baccalauréat série D",
+    "eni": "ENI (École nationale d'informatique)",
+    "highSchool": "Lycée",
+    "period2023": "2023 - 2025",
+    "period2020": "2020 - 2023",
+    "completed2019": "Terminé en 2019",
+    "fullStackDeveloper": "Développeur Full Stack",
+    "beysOutsourcing": "Beys Outsourcing Service",
+    "position2023": "2023",
+    "fullStackDescription": "Développé des applications full-stack utilisant ReactJS, NodeJS et PHP.",
+    "codeIgniterDeveloper": "Développeur CodeIgniter 4",
+    "oneEnvironment": "ONE (Bureau national de l'environnement)",
+    "position2022": "2022",
+    "codeIgniterDescription": "Travail sur des systèmes de gestion environnementale utilisant le framework CodeIgniter 4."
   }
-  
-  
+}
