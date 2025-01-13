@@ -4,14 +4,13 @@ import { Contact } from '@/components/Contact';
 import { ProfileProvider } from '@/contexts/ProfileContext';
 import { Footer } from '@/components/Footer';
 import { useTranslations } from 'next-intl';
-import { Loader } from '@/components/Loader';
-import { Suspense, lazy } from 'react';
+import dynamic from 'next/dynamic';
 
-const Hero = lazy(() => import('@/components/Hero').then(module => ({ default: module.Hero })));
-const ProfileSection = lazy(() => import('@/components/ProfileSection').then(module => ({ default: module.ProfileSection })));
-const ProjectCard = lazy(() => import('@/components/ProjectCard').then(module => ({ default: module.ProjectCard })));
-const Skills = lazy(() => import('@/components/Skills').then(module => ({ default: module.Skills })));
-const Header = lazy(() => import('@/components/Header').then(module => ({ default: module.Header })));
+const Hero = dynamic(() => import('@/components/Hero').then(module => ({ default: module.Hero })), { ssr: false });
+const ProfileSection = dynamic(() => import('@/components/ProfileSection').then(module => ({ default: module.ProfileSection })), { ssr: false });
+const ProjectCard = dynamic(() => import('@/components/ProjectCard').then(module => ({ default: module.ProjectCard })), { ssr: false });
+const Skills = dynamic(() => import('@/components/Skills').then(module => ({ default: module.Skills })), { ssr: false });
+const Header = dynamic(() => import('@/components/Header').then(module => ({ default: module.Header })), { ssr: false });
 
 const projects = [
   {
@@ -80,40 +79,35 @@ export default function Home() {
 
   return (
     <ProfileProvider>
-      <Header />
       <div className="font-[family-name:var(--font-geist-sans)] bg-[#222831] text-[#EEEEEE]">
-        <Suspense fallback={<Loader />}>
+        <Header />
+        <main className="pt-16"> {/* Add padding-top to account for fixed header */}
           <Hero />
-        </Suspense>
-        <Suspense fallback={<Loader />}>
           <ProfileSection />
-        </Suspense>
-        <section className="py-10 bg-[#31363F]">
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-8 text-[#76ABAE]">
-              {t('featuredProjects')}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project) => (
-                <Suspense key={project.key} fallback={<Loader />}>
+          <section className="py-10 bg-[#31363F]">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-[#76ABAE]">
+                {t('featuredProjects')}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {projects.map((project) => (
                   <ProjectCard
+                    key={project.key}
                     title={t(project.key)}
                     description={t(project.descriptionKey)}
                     image={project.image}
                     technologies={project.technologies}
                     git={project.git}
                   />
-                </Suspense>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-        <Suspense fallback={<Loader />}>
+          </section>
           <Skills />
-        </Suspense>
-        <section id="contact">
-          <Contact />
-        </section>
+          <section id="contact">
+            <Contact />
+          </section>
+        </main>
         <Footer />
       </div>
     </ProfileProvider>

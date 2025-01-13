@@ -60,8 +60,7 @@ export default function Career() {
   return (
     <div className="min-h-screen flex flex-col bg-[#222831] text-[#EEEEEE]">
       <Header />
-      <Suspense fallback={<Loader />}>
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="flex-grow container mx-auto px-4 py-20">
           <motion.h1 
             className="text-4xl font-bold text-[#76ABAE] mb-12 text-center"
             initial={{ opacity: 0, y: -50 }}
@@ -111,7 +110,6 @@ export default function Career() {
             ))}
           </motion.section>
         </main>
-      </Suspense>
       <Footer />
     </div>
   );

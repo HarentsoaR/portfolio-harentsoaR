@@ -5,8 +5,6 @@ import { notFound } from 'next/navigation';
 import enMessages from '../../../messages/en.json';
 import frMessages from '../../../messages/fr.json';
 import './globals.css';
-import { Suspense } from 'react';
-import { Loader } from '@/components/Loader';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -43,9 +41,7 @@ export default async function RootLayout({
     <html lang={resolvedParams.locale}>
       <body className={inter.className}>
         <NextIntlClientProvider locale={resolvedParams.locale} messages={messages[resolvedParams.locale as keyof Messages]}>
-          <Suspense fallback={<Loader />}>
             <div className='flex-grow'>{children}</div>
-          </Suspense>
         </NextIntlClientProvider>
       </body>
     </html>
