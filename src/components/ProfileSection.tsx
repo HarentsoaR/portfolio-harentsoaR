@@ -82,7 +82,7 @@ export function ProfileSection() {
                     />
                   </div>
                   <h2 className="text-3xl font-bold mb-4 text-[#76ABAE] text-center">
-                    Harentsoa RANDDRIAMAHOLIMANANA
+                    Harentsoa RANDRIAMAHOLIMANANA
                   </h2>
                   <p className="text-xl mb-6 text-[#EEEEEE] font-light text-center">
                     {t('status')} {/* Use translation for status */}
