@@ -46,7 +46,11 @@
     "parallelAndDistributedProgramming": "Programmation Parallèle et Distribuée",
     "parallelAndDistributedProgrammingDescription": "Un projet d'implémentation qui explore la programmation parallèle et distribuée en utilisant efficacement les cœurs CPU.",
     "dentalPracticeManagementSystem": "Système de Gestion des Pratiques Dentaires",
-    "dentalPracticeManagementSystemDescription": "Un projet visant à rationaliser les opérations des pratiques dentaires grâce à l'automatisation de l'enregistrement des patients, de la planification des rendez-vous et des processus de facturation."
+    "dentalPracticeManagementSystemDescription": "Un projet visant à rationaliser les opérations des pratiques dentaires grâce à l'automatisation de l'enregistrement des patients, de la planification des rendez-vous et des processus de facturation.",
+    "aiTrainingGeneration": "Génération d'Entraînement IA",
+    "aiTrainingGenerationDescription": "Une plateforme pour générer et gérer des jeux de données d'entraînement IA, utilisant des techniques avancées d'augmentation de données et d'apprentissage automatique.",
+    "carMusicParty": "CarMusicParty",
+    "carMusicPartyDescription": "Une application mobile qui permet aux passagers de voter pour la musique à jouer lors de longs trajets en voiture, transformant chaque voyage en fête."
   },
   "Bio": {
     "description": "Je poursuis actuellement un Master en Informatique, motivé par une passion de longue date pour la technologie qui a commencé dans mon adolescence. Ma curiosité innée m'a conduit à explorer les complexités du paysage technologique, et je tire une immense satisfaction à observer les avancées rapides et les innovations qui redéfinissent continuellement notre monde."
