@@ -54,7 +54,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.3 }}
       whileHover="hover"
-      initial="rest"
       animate="rest"
     >
       {/* --- BACKGROUND IMAGE --- */}
