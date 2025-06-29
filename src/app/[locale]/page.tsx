@@ -5,10 +5,8 @@ import { ProfileProvider } from '@/contexts/ProfileContext';
 import { Footer } from '@/components/Footer';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
-import { HeroProfile } from '@/components/HeroProfile';
 
-const Hero = dynamic(() => import('@/components/Hero').then(module => ({ default: module.Hero })), { ssr: false });
-const ProfileSection = dynamic(() => import('@/components/ProfileSection').then(module => ({ default: module.ProfileSection })), { ssr: false });
+const HeroProfile = dynamic(() => import('@/components/HeroProfile').then(module => ({ default: module.HeroProfile })), { ssr: false });
 const ProjectCard = dynamic(() => import('@/components/ProjectCard').then(module => ({ default: module.ProjectCard })), { ssr: false });
 const Skills = dynamic(() => import('@/components/Skills').then(module => ({ default: module.Skills })), { ssr: false });
 const Header = dynamic(() => import('@/components/Header').then(module => ({ default: module.Header })), { ssr: false });
@@ -85,9 +83,7 @@ export default function Home() {
     <ProfileProvider>
       <div className="font-[family-name:var(--font-geist-sans)] bg-[#222831] text-[#EEEEEE]">
         <Header />
-        <main className="pt-16"> {/* Add padding-top to account for fixed header */}
-          {/* <Hero />
-          <ProfileSection /> */}
+        <main className="pt-16">
           <HeroProfile />
           <section className="py-10 bg-[#31363F]">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
