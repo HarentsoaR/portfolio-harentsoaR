@@ -9,8 +9,10 @@ import { TypeAnimation } from 'react-type-animation';
 import { FiChevronDown, FiX } from 'react-icons/fi';
 import React from 'react';
 
+type TranslationFunction = ReturnType<typeof useTranslations>;
+
 // --- DATA (pas de changement ici) ---
-const personalInfoData = (t: Function) => [
+const personalInfoData = (t: TranslationFunction) => [
   { icon: FaGraduationCap, text: t('ProfileSection.personalInfo.degreeLabel'), detail: t('ProfileSection.personalInfo.degree') },
   { icon: FaMapMarkerAlt, text: t('ProfileSection.personalInfo.locationLabel'), detail: t('ProfileSection.personalInfo.location') },
   { icon: FaBriefcase, text: t('ProfileSection.personalInfo.availabilityLabel'), detail: t('ProfileSection.personalInfo.availability') },
@@ -58,7 +60,7 @@ export function HeroProfile() {
 }
 
 // --- COLLAPSED HERO ---
-const CollapsedHero: React.FC<{ onToggle: () => void; t: Function }> = ({ onToggle, t }) => (
+const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> = ({ onToggle, t }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -83,7 +85,7 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: Function }> = ({ onTogg
 );
 
 // --- EXPANDED PROFILE ---
-const ExpandedProfile: React.FC<{ onToggle: () => void; t: Function }> = ({ onToggle, t }) => (
+const ExpandedProfile: React.FC<{ onToggle: () => void; t: TranslationFunction }> = ({ onToggle, t }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
