@@ -17,62 +17,63 @@ const projects = [
     descriptionKey: 'schoolManagementSystemDescription',
     image: '/school.png',
     technologies: ['React', 'Spring Boot', 'Spring Security', 'PostgreSQL', 'Docker'],
-    git: ['https://github.com/HarentsoaR/School-Management', 'https://github.com/HarentsoaR/School-ManagementAPI'],
+    gitUrls: [{ label: 'School-Management', url: 'https://github.com/HarentsoaR/School-Management' }, { label: 'School-ManagementAPI', url: 'https://github.com/HarentsoaR/School-ManagementAPI' }],
   },
   {
     key: 'wineManagementApplication',
     descriptionKey: 'wineManagementApplicationDescription',
     image: '/vineyard.png',
     technologies: ['Java', 'Spring Boot', 'Thymeleaf', 'Hibernate', 'JPA', 'PostgreSQL'],
-    git: ['https://github.com/HarentsoaR/Wine-Management'],
+    gitUrls: [{ label: 'Wine-Management', url: 'https://github.com/HarentsoaR/Wine-Management' }],
   },
   {
     key: 'personalPortfolioWebsite',
     descriptionKey: 'personalPortfolioWebsiteDescription',
     image: '/portfolio.png',
     technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Next-intl'],
+    liveUrl: 'https://www.harentsoa.com',
   },
   {
     key: 'carSalesManagementPlatform',
     descriptionKey: 'carSalesManagementPlatformDescription',
     image: '/carsales.jpeg',
     technologies: ['PHP', 'CSS', 'HTML', 'FPDF', 'Java'],
-    git: ['https://github.com/HarentsoaR/car-sales-desktop', 'https://github.com/HarentsoaR/car-sales-management'],
+    gitUrls: [{ label: 'Car Sales Desktop', url: 'https://github.com/HarentsoaR/car-sales-desktop' }, { label: 'Car Sales Management', url: 'https://github.com/HarentsoaR/car-sales-management' }],
   },
   {
     key: 'realTimeWeatherApplication',
     descriptionKey: 'realTimeWeatherApplicationDescription',
     image: '/weather.png',
     technologies: ['React Native', 'JavaScript', 'Tailwind CSS', 'API'],
-    git: ['https://github.com/HarentsoaR/weatheractu'],
+    gitUrls: [{ label: 'Weather App', url: 'https://github.com/HarentsoaR/weatheractu' }],
   },
   {
     key: 'scientificSocialNetwork',
     descriptionKey: 'scientificSocialNetworkDescription',
     image: '/socialNetwork.png',
     technologies: ['Next.js', 'NestJS', 'PostgreSQL', 'JWT', 'OAuth'],
-    git: ['https://github.com/HarentsoaR/scimlgFrontend', 'https://github.com/HarentsoaR/scimlgBackend'],
+    gitUrls: [{ label: 'Frontend', url: 'https://github.com/HarentsoaR/scimlgFrontend' }, { label: 'Backend', url: 'https://github.com/HarentsoaR/scimlgBackend' }],
   },
   {
     key: 'aiTrainingGeneration',
     descriptionKey: 'aiTrainingGenerationDescription',
     image: '/ai-training.png',
     technologies: ['Python', 'PyTorch', 'Machine Learning', 'Data Augmentation'],
-    git: ['https://github.com/HarentsoaR/ai-training-generation'],
+    gitUrls: [{ label: 'AI Training', url: 'https://github.com/HarentsoaR/ai-training-generation' }],
   },
   {
     key: 'carMusicParty',
     descriptionKey: 'carMusicPartyDescription',
     image: '/car-music-party.png',
     technologies: ['React Native', 'NextJs', 'Firebase', 'Socket.IO', 'API', 'Tailwind CSS'],
-    git: ['https://github.com/HarentsoaR/car-music-party'],
+    gitUrls: [{ label: 'CarMusicParty', url: 'https://github.com/HarentsoaR/car-music-party' }],
   },
   {
     key: 'dentalPracticeManagementSystem',
     descriptionKey: 'dentalPracticeManagementSystemDescription',
     image: '/dentalcare.jpg',
     technologies: ['Figma', 'UX/UI Design', 'Swift', 'NuxtJs', 'MongoDB', 'Golang'],
-    git: ['https://github.com/HarentsoaR/dentistNuxt', 'https://github.com/HarentsoaR/dentistApi', 'https://github.com/HarentsoaR/dentistSwift'],
+    gitUrls: [{ label: 'Dentist Nuxt', url: 'https://github.com/HarentsoaR/dentistNuxt' }, { label: 'Dentist API', url: 'https://github.com/HarentsoaR/dentistApi' }, { label: 'Dentist Swift', url: 'https://github.com/HarentsoaR/dentistSwift' }],
   },
 ];
 
@@ -98,7 +99,8 @@ export default function Home() {
                     description={t(project.descriptionKey)}
                     image={project.image}
                     technologies={project.technologies}
-                    git={project.git}
+                    gitUrls={project.gitUrls}
+                    liveUrl={project.liveUrl}
                   />
                 ))}
               </div>
