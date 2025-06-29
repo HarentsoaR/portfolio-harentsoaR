@@ -11,7 +11,11 @@
   },
   "Hero": {
     "learnMore": "En savoir plus",
-    "hideProfile": "Cacher le profil"
+    "hideProfile": "Cacher le profil",
+    "greeting": "Salut, je suis",
+    "role1": "un Développeur Full Stack",
+    "role2": "un Ingénieur Logiciel",
+    "role3": "un Développeur Web"
   },
   "ProfileSection": {
     "aboutMe": "À propos de moi",
@@ -19,10 +23,15 @@
     "languageProficiency": "Compétences linguistiques",
     "personalInfo": {
       "birthday": "11 octobre 2002",
-      "degree": "Master en Informatique",
+      "degree": "Master en Ingénierie Logicielle",
+      "degreeLabel": "Diplôme",
       "location": "Antananarivo, Madagascar",
+      "locationLabel": "Localisation",
       "phone": "+261 34 46 564 59",
-      "email": "randriamaholimanana1@gmail.com"
+      "email": "harentsoarandriama@gmail.com",
+      "emailLabel": "E-mail",
+      "availability": "Ouvert aux opportunités",
+      "availabilityLabel": "Disponibilité"
     }
   },
   "ProjectCard": {
