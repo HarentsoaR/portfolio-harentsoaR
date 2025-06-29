@@ -5,9 +5,9 @@ import { getRequestConfig } from 'next-intl/server';
 const locales = ['en', 'fr'];
 
 export default getRequestConfig(async ({ locale }) => {
-  // Ensure the locale is valid
-  if (!locales.includes(locale)) {
-    notFound(); // Handle invalid locale
+  // Ensure the locale is valid and not undefined
+  if (!locale || !locales.includes(locale)) {
+    notFound(); // Handle invalid or undefined locale
   }
 
   // Dynamically import the messages for the current locale
@@ -16,6 +16,7 @@ export default getRequestConfig(async ({ locale }) => {
   });
 
   return {
-    messages: messages.default // Return the loaded messages
+    messages: messages.default, // Return the loaded messages
+    locale: locale // Add the locale property here
   };
 });
