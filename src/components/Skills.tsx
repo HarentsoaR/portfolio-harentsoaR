@@ -90,10 +90,11 @@ export const Skills: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl font-bold text-center mb-12 text-[#EEEEEE]">
-            Mes <span className="text-[#76ABAE]">Compétences</span>
+            {"Mes "}
+            <span className="text-[#76ABAE]">Compétences</span>
           </h2>
           <p className="text-center max-w-2xl mx-auto mb-16 text-[#EEEEEE]/80">
-            Voici les technologies avec lesquelles j'aime travailler et sur lesquelles j'ai acquis une solide expérience au fil de mes projets.
+            Voici les technologies avec lesquelles j&#39;aime travailler et sur lesquelles j&#39;ai acquis une solide expérience au fil de mes projets.
           </p>
         </motion.div>
 
