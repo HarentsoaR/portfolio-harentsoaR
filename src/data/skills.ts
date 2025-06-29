@@ -4,11 +4,11 @@ import React, { ReactNode } from 'react';
 import {
   SiPhp, SiCodeigniter, SiJavascript, SiReact, SiNextdotjs, SiNestjs,
   SiSpringboot, SiPostgresql, SiMysql, SiGit, SiJsonwebtokens,
-  SiAuth0, SiApollographql, SiTailwindcss, SiCss3, SiHtml5
+  SiAuth0, SiApollographql, SiTailwindcss, SiCss3, SiHtml5, SiMongodb, SiSqlite, SiFirebase, SiGo, SiNuxtdotjs, SiSwift
 } from 'react-icons/si';
 
 // On définit un type pour les catégories pour éviter les fautes de frappe
-export type SkillCategory = 'Backend' | 'Frontend' | 'Databases' | 'Tools & Concepts';
+export type SkillCategory = 'Backend' | 'Frontend' | 'Databases' | 'Tools & Concepts' | 'Mobile';
 
 // On définit l'interface pour un seul objet "Skill"
 export interface Skill {
@@ -24,16 +24,24 @@ export const skillsData: Skill[] = [
   { name: 'NestJS', icon: React.createElement(SiNestjs, { className: 'h-8 w-8' }), category: 'Backend' },
   { name: 'Java', icon: React.createElement(SiSpringboot, { className: 'h-8 w-8' }), category: 'Backend' },
   { name: 'Spring Boot', icon: React.createElement(SiSpringboot, { className: 'h-8 w-8' }), category: 'Backend' },
+  { name: 'Go', icon: React.createElement(SiGo, { className: 'h-8 w-8' }), category: 'Backend' },
   
   { name: 'JavaScript', icon: React.createElement(SiJavascript, { className: 'h-8 w-8' }), category: 'Frontend' },
   { name: 'React', icon: React.createElement(SiReact, { className: 'h-8 w-8' }), category: 'Frontend' },
   { name: 'Next.js', icon: React.createElement(SiNextdotjs, { className: 'h-8 w-8' }), category: 'Frontend' },
+  { name: 'Nuxt.js', icon: React.createElement(SiNuxtdotjs, { className: 'h-8 w-8' }), category: 'Frontend' },
   { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss, { className: 'h-8 w-8' }), category: 'Frontend' },
   { name: 'CSS', icon: React.createElement(SiCss3, { className: 'h-8 w-8' }), category: 'Frontend' },
   { name: 'HTML', icon: React.createElement(SiHtml5, { className: 'h-8 w-8' }), category: 'Frontend' },
 
   { name: 'PostgreSQL', icon: React.createElement(SiPostgresql, { className: 'h-8 w-8' }), category: 'Databases' },
   { name: 'MySQL', icon: React.createElement(SiMysql, { className: 'h-8 w-8' }), category: 'Databases' },
+  { name: 'MongoDB', icon: React.createElement(SiMongodb, { className: 'h-8 w-8' }), category: 'Databases' },
+  { name: 'SQLite', icon: React.createElement(SiSqlite, { className: 'h-8 w-8' }), category: 'Databases' },
+  { name: 'Firebase', icon: React.createElement(SiFirebase, { className: 'h-8 w-8' }), category: 'Databases' },
+  
+  { name: 'SWIFT', icon: React.createElement(SiSwift, { className: 'h-8 w-8' }), category: 'Mobile' },
+  { name: 'React Native', icon: React.createElement(SiReact, { className: 'h-8 w-8' }), category: 'Mobile' },
   
   { name: 'Git', icon: React.createElement(SiGit, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
   { name: 'JWT', icon: React.createElement(SiJsonwebtokens, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },

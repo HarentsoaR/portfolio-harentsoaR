@@ -93,5 +93,15 @@
     "oneEnvironment": "ONE (National Office for the Environment)",
     "position2022": "2022",
     "codeIgniterDescription": "Worked on environmental management systems using CodeIgniter 4 framework."
+  },
+  "SkillsPage": {
+    "titlePart1": "My",
+    "titlePart2": "Skills",
+    "description": "Here are the technologies I enjoy working with and have gained solid experience with through my projects.",
+    "Backend": "Backend",
+    "Frontend": "Frontend",
+    "Databases": "Databases",
+    "Tools & Concepts": "Tools & Concepts",
+    "Mobile": "Mobile"
   }
 }

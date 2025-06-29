@@ -76,12 +76,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
             <motion.div className="flex items-center gap-3" variants={contentVariants}>
                 {liveUrl && (
                   <motion.a href={liveUrl} target="_blank" rel="noopener noreferrer" className="text-[#EEEEEE]/80 hover:text-[#76ABAE] transition-colors" variants={itemVariants}>
-                    <FaExternalLinkAlt size={18} />
+                    <FaExternalLinkAlt size={40} />
                   </motion.a>
                 )}
                 {gitUrls && gitUrls.map(git => (
                    <motion.a key={git.label} href={git.url} target="_blank" rel="noopener noreferrer" className="text-[#EEEEEE]/80 hover:text-[#76ABAE] transition-colors" variants={itemVariants}>
-                    <FaGithub size={20} />
+                    <FaGithub size={40} />
                    </motion.a>
                 ))}
             </motion.div>
