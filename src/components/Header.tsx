@@ -11,8 +11,9 @@ import LocalSwitcher from './local-switcher';
 
 const navItems = [
   { name: 'Home', path: '/' },
-  { name: 'Career', path: '/career' },
-  { name: 'Skills', path: '/#skills' }, // Exemple pour scroller à une section
+  { name: 'Career', path: '/#career' },
+  { name: 'Skills', path: '/#skills' },
+  { name: 'Contact', path: '/#contact' },
 ];
 
 export function Header() {

@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
+import { Career } from '@/components/Career';
 
 const HeroProfile = dynamic(() => import('@/components/HeroProfile').then(module => ({ default: module.HeroProfile })), { ssr: false });
 const ProjectCard = dynamic(() => import('@/components/ProjectCard').then(module => ({ default: module.ProjectCard })), { ssr: false });
@@ -98,6 +99,28 @@ export default function Home() {
             {/* Optionally, add a subtle animated background here */}
           </motion.section>
 
+          {/* CAREER SECTION */}
+          <motion.section
+            id="career"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Career />
+          </motion.section>
+
+          {/* SKILLS SECTION */}
+          <motion.section
+            id="skills"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Skills />
+          </motion.section>
+
           {/* PROJECTS SECTION */}
           <motion.section
             id="projects"
@@ -149,17 +172,6 @@ export default function Home() {
                 ))}
               </motion.div>
             </div>
-          </motion.section>
-
-          {/* SKILLS SECTION */}
-          <motion.section
-            id="skills"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Skills />
           </motion.section>
 
           {/* CONTACT SECTION */}

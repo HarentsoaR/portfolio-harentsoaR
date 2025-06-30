@@ -82,7 +82,11 @@
     "name": "Nom",
     "email": "Email",
     "message": "Message",
-    "sendMessage": "Envoyer le message"
+    "sendMessage": "Envoyer le message",
+    "intro": "N'hésitez pas à me contacter pour toute question, opportunité ou simplement pour discuter.",
+    "contactInfo": "Informations de contact",
+    "sending": "Envoi...",
+    "thanks": "Merci de m'avoir contacté !"
   },
   "Career": {
     "developmentExperience": "Expérience de développement",

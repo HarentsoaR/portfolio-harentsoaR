@@ -82,7 +82,11 @@
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "sendMessage": "Send Message"
+    "sendMessage": "Send Message",
+    "intro": "Feel free to reach out to me for any inquiries, opportunities, or just to say hello.",
+    "contactInfo": "Contact Information",
+    "sending": "Sending...",
+    "thanks": "Thanks for reaching out!"
   },
   "Career": {
     "developmentExperience": "Development Experience",
