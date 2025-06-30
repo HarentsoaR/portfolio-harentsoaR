@@ -36,12 +36,10 @@ export function HeroProfile() {
   };
 
   return (
-    // FIX: Suppression de `overflow-hidden` qui causait la disparition de l'image pendant l'animation `layout`.
-    // UI ENHANCEMENT: Ajout d'un subtil dégradé pour plus de profondeur visuelle.
     <motion.section
       id="hero-profile-section"
       layout
-      className="relative bg-gradient-to-b from-[#222831] to-[#2a3038] text-[#EEEEEE]"
+      className={`relative text-[#EEEEEE] ${showProfile ? 'bg-gradient-to-b from-[#222831] to-[#2a3038]' : 'bg-transparent'}`}
       initial={{ borderRadius: "0rem" }}
       animate={{ borderRadius: showProfile ? "2rem" : "0rem" }}
       transition={{ type: 'spring', stiffness: 100, damping: 20 }}
@@ -86,21 +84,23 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> 
 
 // --- EXPANDED PROFILE ---
 const ExpandedProfile: React.FC<{ onToggle: () => void; t: TranslationFunction }> = ({ onToggle, t }) => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.5, delay: 0.3 }}
-    className="relative p-6 lg:p-12 bg-[#31363F] rounded-2xl shadow-2xl"
-  >
-    <button onClick={onToggle} className="absolute top-4 right-4 text-[#76ABAE]/70 hover:text-[#EEEEEE] transition-colors z-10 p-2 rounded-full bg-[#222831]/50 hover:bg-[#222831] hover:scale-110">
-      <FiX size={28} />
-    </button>
-    {/* UI ENHANCEMENT: Utilisation de `gap-x-16` pour un espacement clair et modification de la répartition du poids des colonnes. */}
-    <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-y-10 lg:gap-x-16">
-      
+  <div className="relative flex items-center justify-center min-h-[60vh] py-8">
+    {/* Subtle animated gradient or SVG background for extra polish */}
+    <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="w-full h-full bg-gradient-to-tr from-[#76ABAE]/30 via-[#31363F]/40 to-[#222831]/60 animate-pulse-slow rounded-3xl blur-2xl" />
+    </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.98 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+      className="relative z-10 p-8 lg:p-16 bg-[#222831]/70 backdrop-blur-xl border border-[#76ABAE]/20 rounded-3xl shadow-2xl flex flex-col lg:flex-row items-center lg:items-start justify-center gap-y-10 lg:gap-x-16"
+      style={{ boxShadow: '0 8px 32px 0 rgba(34, 40, 49, 0.25)' }}
+    >
+      <button onClick={onToggle} className="absolute top-4 right-4 text-[#76ABAE]/70 hover:text-[#EEEEEE] transition-colors z-10 p-2 rounded-full bg-[#222831]/50 hover:bg-[#222831] hover:scale-110">
+        <FiX size={28} />
+      </button>
       {/* Colonne Gauche - Photo & Liens */}
-      {/* UI ENHANCEMENT: `lg:w-5/12` et `flex-shrink-0` pour un meilleur équilibre. `space-y-4` pour un rythme vertical parfait. */}
       <div className="w-full lg:w-5/12 flex-shrink-0 flex flex-col items-center space-y-4">
         <motion.div layoutId="profile-picture" className="relative w-48 h-48">
           <Image src="/usages/pfp.jpg" alt="Harentsoa" layout="fill" objectFit="cover" className="rounded-full shadow-lg border-4 border-[#76ABAE]" />
@@ -118,9 +118,7 @@ const ExpandedProfile: React.FC<{ onToggle: () => void; t: TranslationFunction }
           <a href="https://linkedin.com/in/harentsoa-randriamaholimanana-a005902a4" target="_blank" rel="noopener noreferrer" className="text-[#76ABAE] hover:text-[#EEEEEE] transition-colors transform hover:scale-110"><FaLinkedin size={36} /></a>
         </motion.div>
       </div>
-      
       {/* Colonne Droite - Détails */}
-      {/* UI ENHANCEMENT: `border-t` pour une séparation claire sur mobile, `lg:border-l` pour le desktop. */}
       <motion.div
         className="w-full lg:w-7/12 text-left border-t lg:border-t-0 lg:border-l border-[#76ABAE]/20 pt-10 lg:pt-0 lg:pl-16"
         variants={{ visible: { transition: { staggerChildren: 0.1, delayChildren: 0.4 } } }}
@@ -141,7 +139,6 @@ const ExpandedProfile: React.FC<{ onToggle: () => void; t: TranslationFunction }
             </motion.li>
           ))}
         </ul>
-        
         <h3 className="text-3xl font-semibold mb-8 text-[#EEEEEE]">{t('ProfileSection.languageProficiency')}</h3>
         <div className="space-y-5">
           {languages.map((lang, index) => (
@@ -157,6 +154,6 @@ const ExpandedProfile: React.FC<{ onToggle: () => void; t: TranslationFunction }
           ))}
         </div>
       </motion.div>
-    </div>
-  </motion.div>
+    </motion.div>
+  </div>
 );

@@ -5,6 +5,7 @@ import { ProfileProvider } from '@/contexts/ProfileContext';
 import { Footer } from '@/components/Footer';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
+import { motion } from 'framer-motion';
 
 const HeroProfile = dynamic(() => import('@/components/HeroProfile').then(module => ({ default: module.HeroProfile })), { ssr: false });
 const ProjectCard = dynamic(() => import('@/components/ProjectCard').then(module => ({ default: module.ProjectCard })), { ssr: false });
@@ -82,34 +83,95 @@ export default function Home() {
 
   return (
     <ProfileProvider>
-      <div className="font-[family-name:var(--font-geist-sans)] bg-[#222831] text-[#EEEEEE]">
+      <div className="font-[family-name:var(--font-geist-sans)] bg-[#222831] text-[#EEEEEE] scroll-smooth">
         <Header />
         <main className="pt-16">
-          <HeroProfile />
-          <section className="py-10 bg-[#31363F]">
+          {/* HERO SECTION */}
+          <motion.section
+            id="hero"
+            className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#222831] to-[#31363F] relative"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <HeroProfile />
+            {/* Optionally, add a subtle animated background here */}
+          </motion.section>
+
+          {/* PROJECTS SECTION */}
+          <motion.section
+            id="projects"
+            className="py-20 bg-[#31363F]"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-[#76ABAE]">
+              <motion.h2
+                className="text-2xl sm:text-3xl font-bold text-center mb-8 text-[#76ABAE]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
                 {t('featuredProjects')}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                {projects.map((project) => (
-                  <ProjectCard
+              </motion.h2>
+              <motion.div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+                  },
+                }}
+              >
+                {projects.map((project, idx) => (
+                  <motion.div
                     key={project.key}
-                    title={t(project.key)}
-                    description={t(project.descriptionKey)}
-                    image={project.image}
-                    technologies={project.technologies}
-                    gitUrls={project.gitUrls}
-                    liveUrl={project.liveUrl}
-                  />
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  >
+                    <ProjectCard
+                      title={t(project.key)}
+                      description={t(project.descriptionKey)}
+                      image={project.image}
+                      technologies={project.technologies}
+                      gitUrls={project.gitUrls}
+                      liveUrl={project.liveUrl}
+                    />
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
-          </section>
-          <Skills />
-          <section id="contact">
+          </motion.section>
+
+          {/* SKILLS SECTION */}
+          <motion.section
+            id="skills"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Skills />
+          </motion.section>
+
+          {/* CONTACT SECTION */}
+          <motion.section
+            id="contact"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
             <Contact />
-          </section>
+          </motion.section>
         </main>
         <Footer />
       </div>
