@@ -103,7 +103,9 @@
     "codeIgniterDeveloper": "CodeIgniter 4 Developer",
     "oneEnvironment": "ONE (National Office for the Environment)",
     "position2022": "2022",
-    "codeIgniterDescription": "Worked on environmental management systems using CodeIgniter 4 framework."
+    "codeIgniterDescription": "Worked on environmental management systems using CodeIgniter 4 framework.",
+    "pageTitle": "My Journey",
+    "pageSubtitle": "From my academic background to my professional experiences, here is the path that has shaped my skills."
   },
   "SkillsPage": {
     "titlePart1": "My",
