@@ -1,6 +1,6 @@
 // src/components/ProjectCard.tsx
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import React from 'react';
@@ -25,19 +25,13 @@ const cardVariants = {
 };
 
 const imageVariants = {
-  rest: { scale: 1.0 },
-  hover: { scale: 1.05, transition: { duration: 0.4, ease: 'easeOut' } },
-};
-
-// Panneau qui contient tout le texte (titre + description)
-const panelVariants = {
-  rest: { y: "calc(100% - 4.5rem)" }, // Hauteur du titre visible au repos (ajuster si besoin)
-  hover: { y: "0%", transition: { type: 'spring', stiffness: 150, damping: 25 } },
+  rest: { scale: 1.0, y: "0%" },
+  hover: { scale: 1.05, y: "-2%", transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
 const contentVariants = {
-  rest: { opacity: 0 },
-  hover: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+  rest: { opacity: 0, y: 10 },
+  hover: { opacity: 1, y: 0, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
 };
 
 const itemVariants = {
@@ -46,65 +40,92 @@ const itemVariants = {
 };
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, technologies, liveUrl, gitUrls }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
   return (
     <motion.div
-      className="relative rounded-lg shadow-xl overflow-hidden aspect-[4/3]"
+      className="relative rounded-xl shadow-2xl border border-[#222831]/40 overflow-hidden aspect-[4/3] bg-[#222831] cursor-pointer group"
       variants={cardVariants}
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.3 }}
-      whileHover="hover"
-      animate="rest"
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      style={{ boxShadow: '0 8px 32px 0 rgba(34, 40, 49, 0.25)' }}
     >
       {/* --- BACKGROUND IMAGE --- */}
-      <motion.div variants={imageVariants} className="absolute inset-0">
-        <Image src={image} alt={title} layout="fill" objectFit="cover" />
-      </motion.div>
-      
-      {/* --- PANNEAU GLISSANT (Titre + Contenu) --- */}
-      {/* FIX: Ce panneau unique contient tout. Il est positionné pour que seule la partie titre soit visible au repos. */}
       <motion.div
-        variants={panelVariants}
-        className="absolute inset-0 pt-4 md:pt-5 bg-gradient-to-t from-[#222831] via-[#222831]/80 to-transparent backdrop-blur-[2px] hover:backdrop-blur-[4px] transition-all duration-300"
+        variants={imageVariants}
+        animate={isHovered ? "hover" : "rest"}
+        className="absolute inset-0 w-full h-full"
       >
-        <div className="h-full flex flex-col p-4 md:p-5">
-          {/* --- TITRE (toujours visible en haut du panneau) --- */}
-          {/* UI ENHANCEMENT: Police plus petite et plus élégante. */}
-          <div className="flex-shrink-0 flex justify-between items-center">
-            <h3 className="text-lg md:text-xl font-bold text-white">{title}</h3>
-            {/* Les liens sont maintenant à côté du titre, pour un accès rapide */}
-            <motion.div className="flex items-center gap-3" variants={contentVariants}>
-                {liveUrl && (
-                  <motion.a href={liveUrl} target="_blank" rel="noopener noreferrer" className="text-[#EEEEEE]/80 hover:text-[#76ABAE] transition-colors" variants={itemVariants}>
-                    <FaExternalLinkAlt size={40} />
-                  </motion.a>
-                )}
-                {gitUrls && gitUrls.map(git => (
-                   <motion.a key={git.label} href={git.url} target="_blank" rel="noopener noreferrer" className="text-[#EEEEEE]/80 hover:text-[#76ABAE] transition-colors" variants={itemVariants}>
-                    <FaGithub size={40} />
-                   </motion.a>
-                ))}
-            </motion.div>
-          </div>
+        <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} className="brightness-[0.7]" />
+        {/* Gradient overlay for better contrast and text readability */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-[#222831]/90 via-[#222831]/50 to-transparent pointer-events-none" />
+      </motion.div>
 
-          {/* --- CONTENU (s'affiche dans l'espace restant) --- */}
+      {/* --- CONTENT OVERLAY (DESCRIPTION & TECHNOLOGIES) --- */}
+      <AnimatePresence>
+        {isHovered && (
           <motion.div
-            className="flex-grow flex flex-col justify-end space-y-3 pt-3 overflow-hidden"
+            // Adjusted bottom to prevent overlap with the always-visible title/links bar
+            // min(30%, 100px) ensures responsiveness while keeping a minimum clear area
+            className="absolute top-0 left-0 right-0 z-10 flex flex-col justify-end p-4 md:p-5 text-white bg-[#222831]/90 rounded-b-xl" // Added dark background for readability
+            initial="rest"
+            animate="hover"
+            exit="rest"
             variants={contentVariants}
+            style={{ bottom: 'min(30%, 100px)' }} 
           >
-            <motion.p variants={itemVariants} className="text-sm font-light text-[#EEEEEE]/90 leading-snug">
+            <motion.p variants={itemVariants} className="text-sm md:text-base font-medium mb-3 leading-snug drop-shadow-md">
               {description}
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-wrap gap-2">
               {technologies.map((tech) => (
-                <span key={tech} className="bg-[#76ABAE] text-[#222831] px-3 py-1 rounded-full text-xs font-semibold">
+                <span key={tech} className="bg-gradient-to-r from-[#76ABAE] to-[#4FC3F7] text-[#222831] px-3 py-1 rounded-full text-xs font-bold shadow-md border border-[#76ABAE]/40">
                   {tech}
                 </span>
               ))}
             </motion.div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* --- TITLE AND LINKS (ALWAYS VISIBLE AT BOTTOM) --- */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-20 px-4 md:px-5 pt-6 pb-4" // Adjusted pt for better spacing
+        style={{
+          background: 'linear-gradient(to top, rgba(34,40,49,0.95) 60%, rgba(34,40,49,0.0))',
+          backdropFilter: 'blur(2px)',
+        }}
+      >
+        <h3 className="text-lg md:text-xl font-extrabold text-white drop-shadow-lg tracking-tight mb-2">
+          {title}
+        </h3>
+        <div className="flex items-center gap-4">
+          {liveUrl && (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[#EEEEEE]/90 hover:text-[#76ABAE] transition-colors text-sm font-semibold"
+            >
+              <FaExternalLinkAlt size={20} /> Live
+            </a>
+          )}
+          {gitUrls && gitUrls.map(git => (
+            <a
+              key={git.label}
+              href={git.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[#EEEEEE]/90 hover:text-[#76ABAE] transition-colors text-sm font-semibold"
+            >
+              <FaGithub size={20} /> {git.label}
+            </a>
+          ))}
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
