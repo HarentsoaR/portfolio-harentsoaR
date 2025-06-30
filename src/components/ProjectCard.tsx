@@ -68,9 +68,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            // Adjusted bottom to prevent overlap with the always-visible title/links bar
-            // min(30%, 100px) ensures responsiveness while keeping a minimum clear area
-            className="absolute top-0 left-0 right-0 z-10 flex flex-col justify-end p-4 md:p-5 text-white bg-[#222831]/90 rounded-b-xl" // Added dark background for readability
+            className="absolute top-0 left-0 right-0 z-10 flex flex-col justify-end p-4 md:p-5 text-white bg-[#222831]/90 rounded-b-xl max-h-[70%] min-h-[120px] overflow-y-auto"
             initial="rest"
             animate="hover"
             exit="rest"
