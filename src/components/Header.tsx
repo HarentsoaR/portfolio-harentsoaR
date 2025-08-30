@@ -3,14 +3,14 @@
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; // Import useEffect
 import { useTranslations } from 'next-intl';
 import { useScroll } from '@/hooks/useScroll';
 import { AnimatedHamburgerIcon } from './AnimatedHamburgerIcon';
 import LocalSwitcher from './local-switcher';
 
 const navItems = [
-  { name: 'Home', path: '/' },
+  { name: 'Home', path: '/#hero-profile-section' }, // Mis à jour pour correspondre à l'ID de la section
   { name: 'Career', path: '/#career' },
   { name: 'Skills', path: '/#skills' },
   { name: 'Contact', path: '/#contact' },
@@ -21,6 +21,25 @@ export function Header() {
   const t = useTranslations('Header');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isScrolled = useScroll();
+  const [activeHash, setActiveHash] = useState(''); // État pour stocker le hash actuel
+
+  useEffect(() => {
+    // Fonction pour mettre à jour activeHash basée sur window.location.hash
+    const updateActiveHash = () => {
+      setActiveHash(window.location.hash);
+    };
+
+    // Définir le hash initial
+    updateActiveHash();
+
+    // Écouter les changements de hash (par exemple, lors du défilement vers une ancre)
+    window.addEventListener('hashchange', updateActiveHash);
+
+    // Nettoyer l'écouteur d'événements
+    return () => {
+      window.removeEventListener('hashchange', updateActiveHash);
+    };
+  }, []); // Le tableau de dépendances vide signifie que cela s'exécute une fois au montage
 
   const mobileMenuVariants = {
     open: {
@@ -55,10 +74,20 @@ export function Header() {
           {/* Menu Desktop */}
           <ul className="hidden md:flex md:space-x-2 items-center">
             {navItems.map((item) => {
-              const isActive = (item.path === '/' && pathname === '/') || (item.path !== '/' && pathname.startsWith(item.path.split('#')[0]));
+              const itemHash = item.path.includes('#') ? '#' + item.path.split('#')[1] : '';
+              let isActive = (activeHash === itemHash);
+
+              // Cas spécial pour le lien 'Home' lorsque la page est chargée sans hash spécifique
+              // et que le chemin correspond à la racine de la locale (ex: /en)
+              const currentPathWithoutLocale = pathname.replace(/^\/(en|fr)/, '');
+              if (item.name === 'Home' && activeHash === '' && currentPathWithoutLocale === '/') {
+                isActive = true;
+              }
+
               return (
                 <li key={item.name} className="relative">
                   <Link href={item.path}
+                    onClick={() => setIsMenuOpen(false)} // Ferme le menu mobile au clic
                     className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                       isActive ? 'text-[#EEEEEE]' : 'text-[#EEEEEE]/70 hover:text-[#EEEEEE]'
                     }`}
@@ -82,7 +111,7 @@ export function Header() {
 
           {/* Bouton Menu Mobile */}
           <div className="md:hidden flex items-center">
-            <LocalSwitcher className="mr-4" /> {/* Move switcher here for mobile */}
+            <LocalSwitcher className="mr-4" /> {/* Déplacer le sélecteur ici pour le mobile */}
             <AnimatedHamburgerIcon isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
           </div>
         </div>
