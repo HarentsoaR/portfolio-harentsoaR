@@ -64,7 +64,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
         <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-[#222831]/90 via-[#222831]/50 to-transparent pointer-events-none" />
       </motion.div>
 
-      {/* --- CONTENT OVERLAY (DESCRIPTION & TECHNOLOGIES) - HIDDEN ON MOBILE/TABLET, SHOW ON HOVER ON DESKTOP --- */}
+      {/* --- CONTENT OVERLAY (DESCRIPTION & TECHNOLOGIES) - SHOW ON HOVER ON DESKTOP ONLY --- */}
       <AnimatePresence>
         {isHovered && (
           <motion.div
@@ -89,7 +89,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
         )}
       </AnimatePresence>
 
-      {/* --- TITLE AND LINKS (ALWAYS VISIBLE AT BOTTOM) --- */}
+      {/* --- TITLE, LINKS, AND MOBILE/TABLET TECHNOLOGIES (ALWAYS VISIBLE AT BOTTOM) --- */}
       <div
         className="absolute bottom-0 left-0 right-0 z-20 px-4 md:px-5 pt-6 pb-4"
         style={{
@@ -100,6 +100,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
         <h3 className="text-lg md:text-xl font-extrabold text-white drop-shadow-lg tracking-tight mb-2">
           {title}
         </h3>
+        {/* Technologies for mobile/tablet (visible below lg, hidden on lg and up) */}
+        <div className="flex flex-wrap gap-2 mb-3 lg:hidden">
+          {technologies.map((tech) => (
+            <span key={tech} className="bg-gradient-to-r from-[#76ABAE] to-[#4FC3F7] text-[#222831] px-3 py-1 rounded-full text-xs font-bold shadow-md border border-[#76ABAE]/40">
+              {tech}
+            </span>
+          ))}
+        </div>
         <div className="flex items-center gap-4">
           {liveUrl && (
             <a
