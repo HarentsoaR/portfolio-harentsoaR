@@ -68,12 +68,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute top-0 left-0 right-0 z-10 flex flex-col justify-end p-4 md:p-5 text-white bg-[#222831]/90 rounded-b-xl max-h-[70%] min-h-[120px] overflow-y-auto"
+            className="absolute top-0 left-0 right-0 z-10 flex flex-col justify-end p-4 md:p-5 text-white bg-[#222831]/90 rounded-b-xl overflow-y-auto" // Removed max-h and min-h
             initial="rest"
             animate="hover"
             exit="rest"
             variants={contentVariants}
-            style={{ bottom: 'min(30%, 100px)' }} 
+            style={{ bottom: '80px' }} // Fixed bottom to ensure more space for description
           >
             <motion.p variants={itemVariants} className="text-sm md:text-base font-medium mb-3 leading-snug drop-shadow-md">
               {description}
