@@ -34,7 +34,7 @@ export const Career: React.FC = () => {
 
       {/* --- TIMELINE CONTAINER --- */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative space-y-16">
-        {/* The vertical line */}
+        {/* The vertical line (Desktop only) */}
         <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 h-full w-1 bg-[#31363F] rounded-full" />
         
         {/* Education Section */}
