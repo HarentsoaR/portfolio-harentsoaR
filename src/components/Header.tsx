@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+// Removed: import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { useScroll } from '@/hooks/useScroll';
@@ -19,7 +19,7 @@ const navItems = [
 ];
 
 export function Header() {
-  const pathname = usePathname();
+  // Removed: const pathname = usePathname();
   const t = useTranslations('Header');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isScrolled = useScroll();

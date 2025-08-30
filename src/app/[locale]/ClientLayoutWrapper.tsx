@@ -3,11 +3,12 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { AppWrapper } from '@/components/AppWrapper';
 import React from 'react';
+import { AbstractIntlMessages } from 'next-intl'; // Import AbstractIntlMessages
 
 interface ClientLayoutWrapperProps {
   children: React.ReactNode;
   locale: string;
-  messages: any; // Use a more specific type if possible, e.g., Record<string, string>
+  messages: AbstractIntlMessages; // Changed from any to AbstractIntlMessages
   timeZone: string;
 }
 
