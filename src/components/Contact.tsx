@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import { useTranslations } from 'next-intl';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
-import { CurrentLocationDisplay } from './CurrentLocationDisplay'; // Import du nouveau composant
+import { FaLinkedin, FaGithub, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
 
 // Reusable component for contact info items
 const InfoItem: React.FC<{ icon: React.ReactNode; text: string; href?: string }> = ({ icon, text, href }) => (
@@ -56,6 +56,8 @@ export function Contact() {
       });
   };
 
+  const yourLocation = { lat: -18.8792, lng: 47.5079 }; // Example: Antananarivo, Madagascar. Change to yours.
+
   return (
     <section id="contact" className="py-20 md:py-28 bg-[#31363F] text-[#EEEEEE]">
       <div className="container mx-auto px-6">
@@ -84,17 +86,24 @@ export function Contact() {
           >
             <h3 className="text-2xl font-semibold text-[#76ABAE]">{t('contactInfo')}</h3>
             <div className="space-y-6">
-              <CurrentLocationDisplay // Utilisation du nouveau composant
-                variants={{
-                  hidden: { opacity: 0, x: -20 },
-                  visible: { opacity: 1, x: 0 },
-                }}
-              />
-              <InfoItem icon={<FaEnvelope />} text="randriamaholimanana1@gmail.com" href="mailto:randriamaholimanana1@gmail.com" />
+              <InfoItem icon={<FaMapMarkerAlt />} text="Antananarivo, Madagascar" />
+              <InfoItem icon={<FaEnvelope />} text="harentsoarandriama@gmail.com" href="mailto:harentsoarandriama@gmail.com" />
               <InfoItem icon={<FaLinkedin />} text="LinkedIn Profile" href="https://linkedin.com/in/harentsoa-randriamaholimanana-a005902a4" />
               <InfoItem icon={<FaGithub />} text="GitHub Profile" href="https://github.com/HarentsoaR" />
             </div>
-            {/* La carte Google Maps a été retirée comme demandé */}
+            <div className="h-64 w-full rounded-lg overflow-hidden shadow-lg border border-white/20">
+              <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
+                <Map
+                  defaultCenter={yourLocation}
+                  defaultZoom={11}
+                  mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID!}
+                  gestureHandling={'cooperative'}
+                  disableDefaultUI={true}
+                >
+                  <Marker position={yourLocation} />
+                </Map>
+              </APIProvider>
+            </div>
           </motion.div>
 
           {/* --- RIGHT SIDE: Form --- */}
