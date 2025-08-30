@@ -14,6 +14,7 @@ const navItems = [
   { name: 'Home', path: '/#hero-profile-section', id: 'hero-profile-section' },
   { name: 'Career', path: '/#career', id: 'career' },
   { name: 'Skills', path: '/#skills', id: 'skills' },
+  { name: 'Projects', path: '/#projects', id: 'projects' }, // Added Projects nav item
   { name: 'Contact', path: '/#contact', id: 'contact' },
 ];
 
