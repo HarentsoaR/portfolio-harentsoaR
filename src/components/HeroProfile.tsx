@@ -1,4 +1,4 @@
-// src/components/HeroProfile.tsx
+"use client";
 
 import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaGraduationCap, FaMapMarkerAlt, FaBriefcase, FaEnvelope } from 'react-icons/fa';
@@ -30,6 +30,7 @@ export function HeroProfile() {
 
   const handleToggle = () => {
     if (!showProfile) {
+      // Scroll to the top of the hero section when expanding
       document.getElementById('hero-profile-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     toggleProfile();
@@ -39,7 +40,7 @@ export function HeroProfile() {
     <motion.section
       id="hero-profile-section"
       layout
-      className={`relative text-[#EEEEEE] ${showProfile ? 'bg-gradient-to-b from-[#222831] to-[#2a3038]' : 'bg-transparent'}`}
+      className={`relative text-[#EEEEEE] w-full ${showProfile ? 'bg-gradient-to-b from-[#222831] to-[#2a3038] min-h-screen flex items-center justify-center' : 'bg-transparent'}`}
       initial={{ borderRadius: "0rem" }}
       animate={{ borderRadius: showProfile ? "2rem" : "0rem" }}
       transition={{ type: 'spring', stiffness: 100, damping: 20 }}
@@ -60,14 +61,14 @@ export function HeroProfile() {
 // --- COLLAPSED HERO ---
 const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> = ({ onToggle, t }) => (
   <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.5 }}
     className="flex flex-col items-center"
   >
     <motion.div layoutId="profile-picture" className="relative w-32 h-32 mb-6">
-      <Image src="/usages/pfp.jpg" alt="Harentsoa" layout="fill" objectFit="cover" className="rounded-full shadow-lg" priority />
+      <Image src="/usages/pfp.jpg" alt="Harentsoa" layout="fill" objectFit="cover" className="rounded-full shadow-lg border-2 border-[#76ABAE]" priority />
     </motion.div>
     <motion.h1 layoutId="hero-title" className="text-4xl md:text-6xl font-bold text-[#EEEEEE] mb-4">
       {t('Hero.greeting')} <span className="text-[#76ABAE]">Harentsoa</span>.
@@ -75,9 +76,9 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> 
     <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-8">
       <TypeAnimation sequence={[t('Hero.role1'), 2000, t('Hero.role2'), 2000, t('Hero.role3'), 2000]} wrapper="span" cursor={true} repeat={Infinity} />
     </motion.div>
-    <motion.button layoutId="hero-button" onClick={onToggle} className="bg-[#76ABAE] text-[#222831] px-8 py-3 rounded-full font-bold text-lg hover:bg-[#EEEEEE] transition-colors flex items-center gap-2" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+    <motion.button layoutId="hero-button" onClick={onToggle} className="bg-[#76ABAE] text-[#222831] px-8 py-3 rounded-full font-bold text-lg hover:bg-[#EEEEEE] transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
       {t('Hero.learnMore')}
-      <FiChevronDown />
+      <FiChevronDown className="ml-1" />
     </motion.button>
   </motion.div>
 );
@@ -87,17 +88,18 @@ const ExpandedProfile: React.FC<{ onToggle: () => void; t: TranslationFunction }
   <div className="relative flex items-center justify-center min-h-[60vh] py-8">
     {/* Subtle animated gradient or SVG background for extra polish */}
     <div className="absolute inset-0 z-0 pointer-events-none">
-      <div className="w-full h-full bg-gradient-to-tr from-[#76ABAE]/30 via-[#31363F]/40 to-[#222831]/60 animate-pulse-slow rounded-3xl blur-2xl" />
+      {/* Removed animate-pulse-slow for minimal animations */}
+      <div className="w-full h-full bg-gradient-to-tr from-[#76ABAE]/10 via-[#31363F]/20 to-[#222831]/30 rounded-3xl blur-2xl" />
     </div>
     <motion.div
       initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-      className="relative z-10 p-8 lg:p-16 bg-[#222831]/70 backdrop-blur-xl border border-[#76ABAE]/20 rounded-3xl shadow-2xl flex flex-col lg:flex-row items-center lg:items-start justify-center gap-y-10 lg:gap-x-16"
-      style={{ boxShadow: '0 8px 32px 0 rgba(34, 40, 49, 0.25)' }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      className="relative z-10 p-8 lg:p-12 bg-[#222831]/80 backdrop-blur-xl border border-[#76ABAE]/30 rounded-3xl shadow-2xl flex flex-col lg:flex-row items-center lg:items-start justify-center gap-y-10 lg:gap-x-12 max-w-6xl w-full"
+      style={{ boxShadow: '0 12px 40px 0 rgba(34, 40, 49, 0.4)' }}
     >
-      <button onClick={onToggle} className="absolute top-4 right-4 text-[#76ABAE]/70 hover:text-[#EEEEEE] transition-colors z-10 p-2 rounded-full bg-[#222831]/50 hover:bg-[#222831] hover:scale-110">
+      <button onClick={onToggle} className="absolute top-4 right-4 text-[#76ABAE]/70 hover:text-[#EEEEEE] transition-colors z-20 p-2 rounded-full bg-[#31363F]/70 hover:bg-[#31363F] hover:scale-110">
         <FiX size={28} />
       </button>
       {/* Colonne Gauche - Photo & Liens */}
@@ -120,8 +122,8 @@ const ExpandedProfile: React.FC<{ onToggle: () => void; t: TranslationFunction }
       </div>
       {/* Colonne Droite - Détails */}
       <motion.div
-        className="w-full lg:w-7/12 text-left border-t lg:border-t-0 lg:border-l border-[#76ABAE]/20 pt-10 lg:pt-0 lg:pl-16"
-        variants={{ visible: { transition: { staggerChildren: 0.1, delayChildren: 0.4 } } }}
+        className="w-full lg:w-7/12 text-left border-t lg:border-t-0 lg:border-l border-[#76ABAE]/20 pt-10 lg:pt-0 lg:pl-12"
+        variants={{ visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } }}
         initial="hidden"
         animate="visible"
       >
@@ -147,8 +149,8 @@ const ExpandedProfile: React.FC<{ onToggle: () => void; t: TranslationFunction }
                 <span className="text-[#EEEEEE]">{lang.name}</span>
                 <span className="text-[#76ABAE]">{lang.level}</span>
               </div>
-              <div className="w-full bg-[#222831] rounded-full h-2.5">
-                <motion.div className="bg-gradient-to-r from-[#76ABAE] to-[#a4d4d6] h-2.5 rounded-full" initial={{ width: 0 }} whileInView={{ width: `${lang.percentage}%` }} viewport={{ once: true }} transition={{ duration: 1.5, type: 'spring', delay: 0.5 + index * 0.2 }} />
+              <div className="w-full bg-[#31363F] rounded-full h-3">
+                <motion.div className="bg-gradient-to-r from-[#76ABAE] to-[#a4d4d6] h-3 rounded-full" initial={{ width: 0 }} whileInView={{ width: `${lang.percentage}%` }} viewport={{ once: true }} transition={{ duration: 1.5, type: 'spring', delay: 0.5 + index * 0.2 }} />
               </div>
             </motion.div>
           ))}

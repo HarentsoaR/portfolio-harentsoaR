@@ -1,12 +1,12 @@
-// src/components/Header.tsx
+"use client";
 
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation'; // useRouter n'est plus nécessaire ici
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { useScroll } from '@/hooks/useScroll'; // Adaptez le chemin
-import { AnimatedHamburgerIcon } from './AnimatedHamburgerIcon'; // Adaptez le chemin
+import { useScroll } from '@/hooks/useScroll';
+import { AnimatedHamburgerIcon } from './AnimatedHamburgerIcon';
 import LocalSwitcher from './local-switcher';
 
 const navItems = [
@@ -43,7 +43,7 @@ export function Header() {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'py-2 bg-[#222831]/80 backdrop-blur-lg shadow-md' : 'py-4 bg-[#222831]'
+        isScrolled ? 'py-2 bg-[#222831]/90 backdrop-blur-lg shadow-md' : 'py-4 bg-[#222831]'
       }`}
     >
       <nav className="container mx-auto px-4">
@@ -55,7 +55,7 @@ export function Header() {
           {/* Menu Desktop */}
           <ul className="hidden md:flex md:space-x-2 items-center">
             {navItems.map((item) => {
-              const isActive = (item.path === '/' && pathname === '/') || (item.path !== '/' && pathname.startsWith(item.path));
+              const isActive = (item.path === '/' && pathname === '/') || (item.path !== '/' && pathname.startsWith(item.path.split('#')[0]));
               return (
                 <li key={item.name} className="relative">
                   <Link href={item.path}
@@ -68,7 +68,7 @@ export function Header() {
                   {isActive && (
                     <motion.div
                       className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#76ABAE] rounded-full"
-                      layoutId="active-pill" // La magie est ici !
+                      layoutId="active-pill"
                       transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -81,7 +81,8 @@ export function Header() {
           </ul>
 
           {/* Bouton Menu Mobile */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
+            <LocalSwitcher className="mr-4" /> {/* Move switcher here for mobile */}
             <AnimatedHamburgerIcon isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
           </div>
         </div>
@@ -108,9 +109,6 @@ export function Header() {
                     </Link>
                   </motion.li>
                 ))}
-                <motion.li variants={mobileLinkVariants} className="pt-8">
-                  <LocalSwitcher />
-                </motion.li>
               </ul>
             </motion.div>
           )}
