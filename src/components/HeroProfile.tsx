@@ -76,9 +76,29 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> 
     <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-8">
       <TypeAnimation sequence={[t('Hero.role1'), 2000, t('Hero.role2'), 2000, t('Hero.role3'), 2000]} wrapper="span" cursor={true} repeat={Infinity} />
     </motion.div>
-    <motion.button layoutId="hero-button" onClick={onToggle} className="bg-[#76ABAE] text-[#222831] px-8 py-3 rounded-full font-bold text-lg hover:bg-[#EEEEEE] transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-      {t('Hero.learnMore')}
-      <FiChevronDown className="ml-1" />
+    <motion.button
+      layoutId="hero-button"
+      onClick={onToggle}
+      className="relative overflow-hidden bg-gradient-to-r from-[#76ABAE] to-[#a4d4d6] text-[#222831] px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 ease-out flex items-center gap-2 shadow-lg hover:shadow-xl hover:from-[#a4d4d6] hover:to-[#76ABAE] group"
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <span className="relative z-10">{t('Hero.learnMore')}</span>
+      <motion.span
+        className="relative z-10 ml-1"
+        initial={{ y: 0 }}
+        animate={{ y: 0 }}
+        whileHover={{ y: 3 }}
+        transition={{ type: "spring", stiffness: 300, damping: 10 }}
+      >
+        <FiChevronDown />
+      </motion.span>
+      <motion.span
+        className="absolute inset-0 bg-white opacity-0 rounded-full"
+        initial={{ scale: 0 }}
+        whileHover={{ scale: 1.5, opacity: 0.1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      />
     </motion.button>
   </motion.div>
 );
