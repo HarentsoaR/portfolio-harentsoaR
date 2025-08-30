@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import { useTranslations } from 'next-intl';
 import { FaLinkedin, FaGithub, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
-import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
+// Removed: import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
 
 // Reusable component for contact info items
 const InfoItem: React.FC<{ icon: React.ReactNode; text: string; href?: string }> = ({ icon, text, href }) => (
@@ -56,7 +56,7 @@ export function Contact() {
       });
   };
 
-  const yourLocation = { lat: -18.8792, lng: 47.5079 }; // Example: Antananarivo, Madagascar. Change to yours.
+  // Removed: const yourLocation = { lat: -18.8792, lng: 47.5079 }; // Example: Antananarivo, Madagascar. Change to yours.
 
   return (
     <section id="contact" className="py-20 md:py-28 bg-[#31363F] text-[#EEEEEE]">
@@ -91,19 +91,23 @@ export function Contact() {
               <InfoItem icon={<FaLinkedin />} text="LinkedIn Profile" href="https://linkedin.com/in/harentsoa-randriamaholimanana-a005902a4" />
               <InfoItem icon={<FaGithub />} text="GitHub Profile" href="https://github.com/HarentsoaR" />
             </div>
-            <div className="h-64 w-full rounded-lg overflow-hidden shadow-lg border border-white/20">
-              <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
-                <Map
-                  defaultCenter={yourLocation}
-                  defaultZoom={11}
-                  mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID!}
-                  gestureHandling={'cooperative'}
-                  disableDefaultUI={true}
-                >
-                  <Marker position={yourLocation} />
-                </Map>
-              </APIProvider>
-            </div>
+            <motion.div 
+              className="h-64 w-full rounded-lg overflow-hidden shadow-lg border border-white/20"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.960205253805!2d47.48060!3d-18.91510!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU0JzU0LjQiUyA0N8KwMjgnNDkuNyJF!5e0!3m2!1sen!2smg!4v1678912345678!5m2!1sen!2smg"
+                className="w-full h-full min-h-[300px]"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Location Map"
+              />
+            </motion.div>
           </motion.div>
 
           {/* --- RIGHT SIDE: Form --- */}
