@@ -5,7 +5,7 @@ import {
   SiPhp, SiCodeigniter, SiJavascript, SiReact, SiNextdotjs, SiNestjs,
   SiSpringboot, SiPostgresql, SiMysql, SiGit, SiJsonwebtokens,
   SiAuth0, SiApollographql, SiTailwindcss, SiCss3, SiHtml5, SiMongodb, SiSqlite, SiFirebase, SiGo, SiNuxtdotjs, SiSwift,
-  SiJira, SiKubernetes // Ajout de JIRA et Kubernetes
+  SiJira, SiKubernetes, SiKotlin // Ajout de Kotlin
 } from 'react-icons/si';
 
 // On définit un type pour les catégories pour éviter les fautes de frappe
@@ -47,14 +47,15 @@ export const skillsData: Skill[] = [
   // Mobile
   { name: 'SWIFT', icon: React.createElement(SiSwift, { className: 'h-8 w-8' }), category: 'Mobile' },
   { name: 'React Native', icon: React.createElement(SiReact, { className: 'h-8 w-8' }), category: 'Mobile' },
+  { name: 'Kotlin', icon: React.createElement(SiKotlin, { className: 'h-8 w-8' }), category: 'Mobile' }, // Ajout de Kotlin
   
   // Tools & Concepts
   { name: 'Git', icon: React.createElement(SiGit, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
   { name: 'JWT', icon: React.createElement(SiJsonwebtokens, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
   { name: 'OAuth', icon: React.createElement(SiAuth0, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
   { name: 'API REST', icon: React.createElement(SiApollographql, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
-  { name: 'JIRA', icon: React.createElement(SiJira, { className: 'h-8 w-8' }), category: 'Tools & Concepts' }, // Nouvelle compétence
-  { name: 'Kubernetes', icon: React.createElement(SiKubernetes, { className: 'h-8 w-8' }), category: 'Tools & Concepts' } // Nouvelle compétence
+  { name: 'JIRA', icon: React.createElement(SiJira, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
+  { name: 'Kubernetes', icon: React.createElement(SiKubernetes, { className: 'h-8 w-8' }), category: 'Tools & Concepts' }
 ];
 
 // On type l'objet final qui sera un Record (ou dictionnaire)
