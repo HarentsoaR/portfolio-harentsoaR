@@ -3,17 +3,18 @@
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react'; // Import useEffect
+import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { useScroll } from '@/hooks/useScroll';
 import { AnimatedHamburgerIcon } from './AnimatedHamburgerIcon';
 import LocalSwitcher from './local-switcher';
+import { useActiveSection } from '@/hooks/useActiveSection'; // Import the new hook
 
 const navItems = [
-  { name: 'Home', path: '/#hero-profile-section' }, // Mis à jour pour correspondre à l'ID de la section
-  { name: 'Career', path: '/#career' },
-  { name: 'Skills', path: '/#skills' },
-  { name: 'Contact', path: '/#contact' },
+  { name: 'Home', path: '/#hero-profile-section', id: 'hero-profile-section' },
+  { name: 'Career', path: '/#career', id: 'career' },
+  { name: 'Skills', path: '/#skills', id: 'skills' },
+  { name: 'Contact', path: '/#contact', id: 'contact' },
 ];
 
 export function Header() {
@@ -21,25 +22,17 @@ export function Header() {
   const t = useTranslations('Header');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isScrolled = useScroll();
-  const [activeHash, setActiveHash] = useState(''); // État pour stocker le hash actuel
+  const headerRef = useRef<HTMLElement>(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
-    // Fonction pour mettre à jour activeHash basée sur window.location.hash
-    const updateActiveHash = () => {
-      setActiveHash(window.location.hash);
-    };
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.offsetHeight);
+    }
+  }, []);
 
-    // Définir le hash initial
-    updateActiveHash();
-
-    // Écouter les changements de hash (par exemple, lors du défilement vers une ancre)
-    window.addEventListener('hashchange', updateActiveHash);
-
-    // Nettoyer l'écouteur d'événements
-    return () => {
-      window.removeEventListener('hashchange', updateActiveHash);
-    };
-  }, []); // Le tableau de dépendances vide signifie que cela s'exécute une fois au montage
+  const sectionIds = navItems.map(item => item.id);
+  const activeSectionId = useActiveSection(sectionIds, headerHeight + 10); // Add a small buffer
 
   const mobileMenuVariants = {
     open: {
@@ -61,6 +54,7 @@ export function Header() {
 
   return (
     <header
+      ref={headerRef}
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? 'py-2 bg-[#222831]/90 backdrop-blur-lg shadow-md' : 'py-4 bg-[#222831]'
       }`}
@@ -74,20 +68,16 @@ export function Header() {
           {/* Menu Desktop */}
           <ul className="hidden md:flex md:space-x-2 items-center">
             {navItems.map((item) => {
-              const itemHash = item.path.includes('#') ? '#' + item.path.split('#')[1] : '';
-              let isActive = (activeHash === itemHash);
-
-              // Cas spécial pour le lien 'Home' lorsque la page est chargée sans hash spécifique
-              // et que le chemin correspond à la racine de la locale (ex: /en)
-              const currentPathWithoutLocale = pathname.replace(/^\/(en|fr)/, '');
-              if (item.name === 'Home' && activeHash === '' && currentPathWithoutLocale === '/') {
+              let isActive = activeSectionId === item.id;
+              // Special case for Home when at the very top or no specific section is active
+              if (item.id === 'hero-profile-section' && activeSectionId === '') {
                 isActive = true;
               }
 
               return (
                 <li key={item.name} className="relative">
                   <Link href={item.path}
-                    onClick={() => setIsMenuOpen(false)} // Ferme le menu mobile au clic
+                    onClick={() => setIsMenuOpen(false)}
                     className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                       isActive ? 'text-[#EEEEEE]' : 'text-[#EEEEEE]/70 hover:text-[#EEEEEE]'
                     }`}
@@ -111,7 +101,7 @@ export function Header() {
 
           {/* Bouton Menu Mobile */}
           <div className="md:hidden flex items-center">
-            <LocalSwitcher className="mr-4" /> {/* Déplacer le sélecteur ici pour le mobile */}
+            <LocalSwitcher className="mr-4" />
             <AnimatedHamburgerIcon isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
           </div>
         </div>
