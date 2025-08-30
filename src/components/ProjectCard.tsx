@@ -64,11 +64,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
         <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-[#222831]/90 via-[#222831]/50 to-transparent pointer-events-none" />
       </motion.div>
 
-      {/* --- CONTENT OVERLAY (DESCRIPTION & TECHNOLOGIES) - HIDDEN ON MOBILE, SHOW ON HOVER ON DESKTOP --- */}
+      {/* --- CONTENT OVERLAY (DESCRIPTION & TECHNOLOGIES) - HIDDEN ON MOBILE/TABLET, SHOW ON HOVER ON DESKTOP --- */}
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute top-0 left-0 right-0 z-10 hidden md:flex flex-col justify-end p-4 md:p-5 text-white bg-[#222831]/90 rounded-b-xl overflow-y-auto"
+            className="absolute top-0 left-0 right-0 z-10 hidden lg:flex flex-col justify-end p-4 md:p-5 text-white bg-[#222831]/90 rounded-b-xl overflow-y-auto"
             initial="rest"
             animate="hover"
             exit="rest"
