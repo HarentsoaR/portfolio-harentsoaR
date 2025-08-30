@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { ClientLayoutWrapper } from './ClientLayoutWrapper';
 import './globals.css';
 import { getMessages, getTimeZone } from 'next-intl/server';
-
-const inter = Inter({ subsets: ['latin'] });
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 
 export const metadata: Metadata = {
   title: 'Harentsoa RANDRIA',
@@ -28,8 +27,8 @@ export default async function RootLayout({
   const timeZone = await getTimeZone();
 
   return (
-    <html lang={locale}>
-      <body className={inter.className}>
+    <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className="font-sans">
         <ClientLayoutWrapper locale={locale} messages={messages} timeZone={timeZone}>
           {children}
         </ClientLayoutWrapper>

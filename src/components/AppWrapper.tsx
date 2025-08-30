@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import { LoadingScreen } from './LoadingScreen';
+import { ScrollToTopButton } from './ScrollToTopButton'; // Import the new component
 
 interface AppWrapperProps {
   children: React.ReactNode;
@@ -31,6 +32,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
       <div style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.5s ease-in-out' }}>
         {children}
       </div>
+      <ScrollToTopButton /> {/* Render the ScrollToTopButton */}
     </>
   );
-}; 
+};

@@ -7,24 +7,29 @@
   --color-gray: #31363F;
   --color-teal: #76ABAE;
   --color-light: #EEEEEE;
+
+  /* Define Geist fonts as CSS variables */
+  --font-geist-sans: var(--font-sans);
+  --font-geist-mono: var(--font-mono);
 }
 
 body {
   color: var(--color-light);
   background-color: var(--color-dark);
+  font-family: var(--font-geist-sans); /* Apply Geist Sans globally */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-geist-sans); /* Use Geist Sans for headings */
   color: var(--color-teal);
   font-weight: 700;
 }
 
-body, p, span, div {
-  font-family: var(--font-geist-sans);
+p, span, div {
+  font-family: var(--font-geist-sans); /* Use Geist Sans for general text */
   font-weight: 400;
 }
 
 code, pre {
-  font-family: var(--font-geist-mono);
+  font-family: var(--font-geist-mono); /* Use Geist Mono for code */
 }

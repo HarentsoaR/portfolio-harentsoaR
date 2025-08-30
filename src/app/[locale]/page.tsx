@@ -84,7 +84,7 @@ export default function Home() {
 
   return (
     <ProfileProvider>
-      <div className="font-[family-name:var(--font-geist-sans)] bg-[#222831] text-[#EEEEEE] scroll-smooth">
+      <div className="bg-[#222831] text-[#EEEEEE] scroll-smooth">
         <Header />
         <main className="pt-16">
           {/* HERO SECTION */}
