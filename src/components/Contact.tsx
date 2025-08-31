@@ -94,7 +94,7 @@ export function Contact() {
               }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3826.960205253805!2d47.474175000000005!3d-18.913916666666668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDU0JzUwLjEiUyA0N8KwMjgnMzYuMyJF!5e0!3m2!1sen!2smg!4v1719490000000!5m2!1sen!2smg"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3826.960205253805!2d47.47328620432353!3d-18.91538362869702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDU0JzU1LjQiUyA0N8KwMjgnMjMuOCJF!5e0!3m2!1sen!2smg!4v1719490000000!5m2!1sen!2smg"
                 className="w-full h-full min-h-[300px]"
                 style={{ border: 0 }}
                 allowFullScreen={true}
