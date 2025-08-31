@@ -55,7 +55,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-20 md:py-28 bg-[#31363F] text-[#EEEEEE]">
-      <div className="container mx-auto px-6 max-w-6xl"> {/* Added max-w-6xl here */}
+      <div className="container mx-auto px-6 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +82,7 @@ export function Contact() {
             <h3 className="text-2xl font-semibold text-[#76ABAE]">{t('contactInfo')}</h3>
             <div className="space-y-6">
               <InfoItem icon={<FaMapMarkerAlt />} text="Antananarivo, Madagascar" />
-              <InfoItem icon={<FaEnvelope />} text="harentsoarandriama@gmail.com" href="mailto:harentsoarandriama@gmail.com" />
+              <InfoItem icon={<FaEnvelope />} text="randriamaholimanana1@gmail.com" href="mailto:randriamaholimanana1@gmail.com" />
               <InfoItem icon={<FaLinkedin />} text="LinkedIn Profile" href="https://linkedin.com/in/harentsoa-randriamaholimanana-a005902a4" />
               <InfoItem icon={<FaGithub />} text="GitHub Profile" href="https://github.com/HarentsoaR" />
             </div>

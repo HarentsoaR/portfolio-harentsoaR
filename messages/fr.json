@@ -1,65 +1,53 @@
 {
-  "Header": {
-    "portfolio": "Portfolio",
-    "home": "Accueil",
-    "career": "Parcours",
-    "skills": "Compétences",
-    "projects": "Projets",
-    "contact": "Contact"
-  },
   "Hero": {
-    "greeting": "Salut, je suis",
+    "greeting": "Bonjour, je suis",
     "role1": "Un Développeur Full-Stack",
     "role2": "Un Développeur Mobile",
-    "role3": "Un Designer UI/UX",
+    "role3": "Un Ingénieur Logiciel",
     "learnMore": "En savoir plus",
     "hideProfile": "Masquer le profil"
-  },
-  "Bio": {
-    "description": "Je suis un développeur Full-Stack passionné, axé sur la création d'applications web et mobiles efficaces et conviviales. J'adore transformer les idées en réalité grâce au code."
   },
   "ProfileSection": {
     "status": "Développeur Full-Stack & Mobile",
     "aboutMe": "À propos de moi",
+    "languageProficiency": "Maîtrise des langues",
     "personalInfo": {
-      "birthday": "20 Mai 2001",
-      "degree": "Master en Ingénierie Logicielle",
-      "location": "Antananarivo, Madagascar",
-      "phone": "+261 34 00 000 00",
-      "email": "harentsoarandriama@gmail.com",
       "degreeLabel": "Diplôme",
+      "degree": "Master en Ingénierie Logicielle",
       "locationLabel": "Localisation",
+      "location": "Antananarivo, Madagascar",
       "availabilityLabel": "Disponibilité",
-      "emailLabel": "Email"
-    },
-    "languageProficiency": "Maîtrise des langues"
+      "availability": "Disponible pour de nouvelles opportunités",
+      "emailLabel": "Email",
+      "email": "randriamaholimanana1@gmail.com"
+    }
   },
   "Career": {
-    "pageTitle": "Mon Parcours",
-    "pageSubtitle": "Une chronologie de mon évolution académique et professionnelle.",
+    "pageTitle": "Mon Parcours Professionnel",
+    "pageSubtitle": "Une chronologie de mes réalisations académiques et professionnelles.",
     "education": "Éducation",
-    "professionalExperience": "Expérience Professionnelle",
     "masterDegree": "Master en Ingénierie Logicielle",
-    "bachelorDegree": "Licence en Ingénierie Logicielle",
+    "bachelorDegree": "Licence en Informatique",
     "baccalaureate": "Baccalauréat Scientifique",
     "eni": "École Nationale d'Informatique (ENI)",
     "highSchool": "Lycée",
-    "period2023": "2023 - Actuel",
-    "period2020": "2020 - 2023",
+    "period2023": "2020 - 2023",
+    "period2020": "2019 - 2020",
     "completed2019": "Obtenu en 2019",
+    "professionalExperience": "Expérience Professionnelle",
     "fullStackDeveloper": "Développeur Full-Stack",
-    "codeIgniterDeveloper": "Développeur CodeIgniter",
     "beysOutsourcing": "Beys Outsourcing",
+    "position2023": "Octobre 2023 - Présent",
+    "fullStackDescription": "Développement et maintenance d'applications web avec React, Next.js, NestJS et PostgreSQL. Implémentation d'APIs RESTful et intégration de services tiers. Collaboration avec des équipes pluridisciplinaires pour livrer des solutions logicielles de haute qualité.",
+    "codeIgniterDeveloper": "Développeur CodeIgniter",
     "oneEnvironment": "One Environment",
-    "position2023": "Octobre 2023 - Actuel",
     "position2022": "Juillet 2022 - Septembre 2023",
-    "fullStackDescription": "Développement et maintenance d'applications web en utilisant diverses technologies, avec un accent sur le développement front-end et back-end.",
-    "codeIgniterDescription": "Conception et implémentation de solutions web avec le framework CodeIgniter, garantissant des applications robustes et évolutives."
+    "codeIgniterDescription": "Développement et maintenance d'applications web avec CodeIgniter et MySQL. Implémentation de nouvelles fonctionnalités et optimisation des existantes. Collaboration avec les designers et autres développeurs pour assurer le succès des projets."
   },
   "SkillsPage": {
     "titlePart1": "Mes",
     "titlePart2": "Compétences",
-    "description": "Voici les technologies et outils avec lesquels j'ai travaillé, classés par domaine d'expertise.",
+    "description": "Voici quelques-unes des technologies et outils avec lesquels j'ai travaillé tout au long de ma carrière.",
     "Backend": "Backend",
     "Frontend": "Frontend",
     "Databases": "Bases de données",
@@ -67,40 +55,48 @@
     "Tools & Concepts": "Outils & Concepts"
   },
   "IndexPage": {
-    "featuredProjects": "Projets en Vedette",
+    "featuredProjects": "Projets Phares",
     "schoolManagementSystem": "Système de Gestion Scolaire",
-    "schoolManagementSystemDescription": "Une application web complète pour la gestion des opérations scolaires, y compris les dossiers des élèves, les cours et les notes.",
+    "schoolManagementSystemDescription": "Un système complet pour la gestion des opérations scolaires, incluant les dossiers des élèves, les cours et les notes. Construit avec React pour le frontend et Spring Boot pour le backend, utilisant PostgreSQL pour la base de données et Docker pour la conteneurisation.",
     "wineManagementApplication": "Application de Gestion Viticole",
-    "wineManagementApplicationDescription": "Une application web pour la gestion des opérations d'un vignoble, de la récolte du raisin à la production et la vente de vin.",
+    "wineManagementApplicationDescription": "Une application conçue pour la gestion des stocks de vin, des ventes et des opérations viticoles. Développée avec Java Spring Boot et Thymeleaf pour le rendu côté serveur, Hibernate/JPA pour l'ORM, et PostgreSQL pour le stockage des données.",
     "personalPortfolioWebsite": "Site Web de Portfolio Personnel",
-    "personalPortfolioWebsiteDescription": "Mon site web de portfolio personnel, présentant mes projets, mes compétences et mon expérience professionnelle.",
+    "personalPortfolioWebsiteDescription": "Mon site web de portfolio personnel présentant mes projets, compétences et parcours professionnel. Construit avec Next.js pour le rendu côté serveur et la génération de sites statiques, stylisé avec Tailwind CSS, et amélioré avec Framer Motion pour les animations et Next-intl pour l'internationalisation.",
     "carSalesManagementPlatform": "Plateforme de Gestion des Ventes Automobiles",
-    "carSalesManagementPlatformDescription": "Une plateforme pour la gestion des ventes de voitures, y compris l'inventaire, les données clients et le suivi des transactions.",
+    "carSalesManagementPlatformDescription": "Une plateforme pour la gestion des ventes de voitures, des stocks et des données clients. Le projet comprend une application de bureau construite avec Java et une application web développée avec PHP, HTML et CSS, avec FPDF pour la génération de rapports.",
     "realTimeWeatherApplication": "Application Météo en Temps Réel",
-    "realTimeWeatherApplicationDescription": "Une application mobile qui fournit des mises à jour météorologiques en temps réel basées sur la localisation de l'utilisateur.",
+    "realTimeWeatherApplicationDescription": "Une application mobile qui fournit des mises à jour météorologiques en temps réel basées sur la localisation de l'utilisateur. Développée avec React Native et JavaScript, stylisée avec Tailwind CSS, et intégrée à une API météo pour la récupération des données.",
     "scientificSocialNetwork": "Réseau Social Scientifique",
-    "scientificSocialNetworkDescription": "Une plateforme de réseau social conçue pour la collaboration scientifique et le partage de connaissances.",
+    "scientificSocialNetworkDescription": "Une plateforme de réseau social conçue pour la collaboration scientifique et le partage de connaissances. Le frontend est construit avec Next.js, et le backend est alimenté par NestJS, utilisant PostgreSQL pour la base de données, JWT pour l'authentification et OAuth pour l'autorisation.",
     "aiTrainingGeneration": "Génération d'Entraînement IA",
-    "aiTrainingGenerationDescription": "Un projet axé sur la génération de données d'entraînement IA et l'implémentation de modèles d'apprentissage automatique.",
+    "aiTrainingGenerationDescription": "Un projet axé sur la génération de données d'entraînement pour l'IA en utilisant Python et PyTorch. Il implique des techniques d d'apprentissage automatique et des stratégies d'augmentation de données pour créer des ensembles de données robustes pour l'entraînement de modèles d'IA.",
     "carMusicParty": "Car Music Party",
-    "carMusicPartyDescription": "Une application mobile et web pour partager et synchroniser de la musique lors de trajets en voiture.",
+    "carMusicPartyDescription": "Une application mobile et web pour créer et gérer des playlists musicales collaboratives pour les fêtes en voiture. Construite avec React Native pour le mobile, Next.js pour le web, Firebase pour les services backend, Socket.IO pour la communication en temps réel et Tailwind CSS pour le style.",
     "dentalPracticeManagementSystem": "Système de Gestion de Cabinet Dentaire",
-    "dentalPracticeManagementSystemDescription": "Un système complet pour la gestion des opérations d'un cabinet dentaire, y compris les rendez-vous, les dossiers patients et la facturation."
+    "dentalPracticeManagementSystemDescription": "Un système complet pour la gestion des opérations d'un cabinet dentaire, incluant les rendez-vous, les dossiers des patients et la facturation. Le projet a impliqué la conception UX/UI avec Figma, et l'implémentation utilisant Swift pour iOS, Nuxt.js pour le web, MongoDB pour la base de données et Golang pour l'API backend."
   },
   "Contact": {
-    "getInTouch": "Contactez-moi",
+    "getInTouch": "Prendre Contact",
     "intro": "Vous avez une question ou souhaitez collaborer ? N'hésitez pas à me contacter !",
-    "contactInfo": "Informations de contact",
-    "messageSent": "Message envoyé",
-    "thanks": "Merci pour votre message ! Je vous répondrai bientôt.",
-    "sending": "Envoi...",
-    "sendMessage": "Envoyer le message",
-    "error": "Oups ! Quelque chose s'est mal passé. Veuillez réessayer plus tard.",
+    "contactInfo": "Informations de Contact",
     "name": "Votre Nom",
     "email": "Votre Email",
-    "message": "Votre Message"
+    "message": "Votre Message",
+    "sendMessage": "Envoyer le Message",
+    "sending": "Envoi...",
+    "messageSent": "Message Envoyé",
+    "thanks": "Merci pour votre message ! Je vous répondrai bientôt.",
+    "error": "Oups ! Quelque chose s'est mal passé. Veuillez réessayer plus tard."
+  },
+  "Header": {
+    "portfolio": "Portfolio",
+    "home": "Accueil",
+    "career": "Carrière",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
   },
   "Footer": {
-    "allRightsReserved": "Tous droits réservés."
+    "allRightsReserved": "Harentsoa RANDRIAMAHOLIMANANA. Tous droits réservés."
   }
 }

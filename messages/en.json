@@ -1,65 +1,53 @@
 {
-  "Header": {
-    "portfolio": "Portfolio",
-    "home": "Home",
-    "career": "Career",
-    "skills": "Skills",
-    "projects": "Projects",
-    "contact": "Contact"
-  },
   "Hero": {
-    "greeting": "Hi, I'm",
+    "greeting": "Hello, I'm",
     "role1": "A Full-Stack Developer",
     "role2": "A Mobile Developer",
-    "role3": "A UI/UX Designer",
+    "role3": "A Software Engineer",
     "learnMore": "Learn More",
     "hideProfile": "Hide Profile"
-  },
-  "Bio": {
-    "description": "I'm a passionate Full-Stack Developer with a strong focus on creating efficient and user-friendly web and mobile applications. I love turning ideas into reality through code."
   },
   "ProfileSection": {
     "status": "Full-Stack & Mobile Developer",
     "aboutMe": "About Me",
+    "languageProficiency": "Language Proficiency",
     "personalInfo": {
-      "birthday": "May 20, 2001",
-      "degree": "Master's Degree in Software Engineering",
-      "location": "Antananarivo, Madagascar",
-      "phone": "+261 34 00 000 00",
-      "email": "harentsoarandriama@gmail.com",
       "degreeLabel": "Degree",
+      "degree": "Master's Degree in Software Engineering",
       "locationLabel": "Location",
+      "location": "Antananarivo, Madagascar",
       "availabilityLabel": "Availability",
-      "emailLabel": "Email"
-    },
-    "languageProficiency": "Language Proficiency"
+      "availability": "Available for new opportunities",
+      "emailLabel": "Email",
+      "email": "randriamaholimanana1@gmail.com"
+    }
   },
   "Career": {
-    "pageTitle": "My Journey",
-    "pageSubtitle": "A timeline of my academic and professional growth.",
+    "pageTitle": "My Career Journey",
+    "pageSubtitle": "A timeline of my academic and professional achievements.",
     "education": "Education",
-    "professionalExperience": "Professional Experience",
     "masterDegree": "Master's Degree in Software Engineering",
-    "bachelorDegree": "Bachelor's Degree in Software Engineering",
+    "bachelorDegree": "Bachelor's Degree in Computer Science",
     "baccalaureate": "Scientific Baccalaureate",
     "eni": "National School of Computer Science (ENI)",
     "highSchool": "High School",
-    "period2023": "2023 - Present",
-    "period2020": "2020 - 2023",
+    "period2023": "2020 - 2023",
+    "period2020": "2019 - 2020",
     "completed2019": "Completed in 2019",
+    "professionalExperience": "Professional Experience",
     "fullStackDeveloper": "Full-Stack Developer",
-    "codeIgniterDeveloper": "CodeIgniter Developer",
     "beysOutsourcing": "Beys Outsourcing",
-    "oneEnvironment": "One Environment",
     "position2023": "October 2023 - Present",
+    "fullStackDescription": "Developed and maintained web applications using React, Next.js, NestJS, and PostgreSQL. Implemented RESTful APIs and integrated third-party services. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+    "codeIgniterDeveloper": "CodeIgniter Developer",
+    "oneEnvironment": "One Environment",
     "position2022": "July 2022 - September 2023",
-    "fullStackDescription": "Developed and maintained web applications using various technologies, focusing on both front-end and back-end development.",
-    "codeIgniterDescription": "Designed and implemented web solutions using the CodeIgniter framework, ensuring robust and scalable applications."
+    "codeIgniterDescription": "Developed and maintained web applications using CodeIgniter and MySQL. Implemented new features and optimized existing ones. Collaborated with designers and other developers to ensure project success."
   },
   "SkillsPage": {
     "titlePart1": "My",
     "titlePart2": "Skills",
-    "description": "Here are the technologies and tools I've worked with, categorized by area of expertise.",
+    "description": "Here are some of the technologies and tools I've worked with throughout my career.",
     "Backend": "Backend",
     "Frontend": "Frontend",
     "Databases": "Databases",
@@ -69,38 +57,46 @@
   "IndexPage": {
     "featuredProjects": "Featured Projects",
     "schoolManagementSystem": "School Management System",
-    "schoolManagementSystemDescription": "A comprehensive web application for managing school operations, including student records, courses, and grades.",
+    "schoolManagementSystemDescription": "A comprehensive system for managing school operations, including student records, courses, and grades. Built with React for the frontend and Spring Boot for the backend, utilizing PostgreSQL for the database and Docker for containerization.",
     "wineManagementApplication": "Wine Management Application",
-    "wineManagementApplicationDescription": "A web application for managing a vineyard's operations, from grape harvesting to wine production and sales.",
+    "wineManagementApplicationDescription": "An application designed for managing wine inventory, sales, and vineyard operations. Developed using Java Spring Boot with Thymeleaf for server-side rendering, Hibernate/JPA for ORM, and PostgreSQL for data storage.",
     "personalPortfolioWebsite": "Personal Portfolio Website",
-    "personalPortfolioWebsiteDescription": "My personal portfolio website, showcasing my projects, skills, and professional experience.",
+    "personalPortfolioWebsiteDescription": "My personal portfolio website showcasing my projects, skills, and career journey. Built with Next.js for server-side rendering and static site generation, styled with Tailwind CSS, and enhanced with Framer Motion for animations and Next-intl for internationalization.",
     "carSalesManagementPlatform": "Car Sales Management Platform",
-    "carSalesManagementPlatformDescription": "A platform for managing car sales, including inventory, customer data, and transaction tracking.",
+    "carSalesManagementPlatformDescription": "A platform for managing car sales, inventory, and customer data. The project includes a desktop application built with Java and a web application developed using PHP, HTML, and CSS, with FPDF for report generation.",
     "realTimeWeatherApplication": "Real-Time Weather Application",
-    "realTimeWeatherApplicationDescription": "A mobile application that provides real-time weather updates based on the user's location.",
+    "realTimeWeatherApplicationDescription": "A mobile application that provides real-time weather updates based on the user's location. Developed using React Native and JavaScript, styled with Tailwind CSS, and integrated with a weather API for data retrieval.",
     "scientificSocialNetwork": "Scientific Social Network",
-    "scientificSocialNetworkDescription": "A social network platform designed for scientific collaboration and knowledge sharing.",
+    "scientificSocialNetworkDescription": "A social network platform designed for scientific collaboration and knowledge sharing. The frontend is built with Next.js, and the backend is powered by NestJS, using PostgreSQL for the database, JWT for authentication, and OAuth for authorization.",
     "aiTrainingGeneration": "AI Training Generation",
-    "aiTrainingGenerationDescription": "A project focused on generating AI training data and implementing machine learning models.",
+    "aiTrainingGenerationDescription": "A project focused on generating AI training data using Python and PyTorch. It involves machine learning techniques and data augmentation strategies to create robust datasets for AI model training.",
     "carMusicParty": "Car Music Party",
-    "carMusicPartyDescription": "A mobile and web application for sharing and synchronizing music during car trips.",
+    "carMusicPartyDescription": "A mobile and web application for creating and managing collaborative music playlists for car parties. Built with React Native for mobile, Next.js for web, Firebase for backend services, Socket.IO for real-time communication, and Tailwind CSS for styling.",
     "dentalPracticeManagementSystem": "Dental Practice Management System",
-    "dentalPracticeManagementSystemDescription": "A comprehensive system for managing dental practice operations, including appointments, patient records, and billing."
+    "dentalPracticeManagementSystemDescription": "A comprehensive system for managing dental practice operations, including appointments, patient records, and billing. The project involved UX/UI design with Figma, and implementation using Swift for iOS, Nuxt.js for the web, MongoDB for the database, and Golang for the backend API."
   },
   "Contact": {
     "getInTouch": "Get In Touch",
     "intro": "Have a question or want to work together? Feel free to reach out!",
-    "contactInfo": "Contact Info",
-    "messageSent": "Message Sent",
-    "thanks": "Thank you for your message! I'll get back to you soon.",
-    "sending": "Sending...",
-    "sendMessage": "Send Message",
-    "error": "Oops! Something went wrong. Please try again later.",
+    "contactInfo": "Contact Information",
     "name": "Your Name",
     "email": "Your Email",
-    "message": "Your Message"
+    "message": "Your Message",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "messageSent": "Message Sent",
+    "thanks": "Thank you for your message! I'll get back to you soon.",
+    "error": "Oops! Something went wrong. Please try again later."
+  },
+  "Header": {
+    "portfolio": "Portfolio",
+    "home": "Home",
+    "career": "Career",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
   },
   "Footer": {
-    "allRightsReserved": "All rights reserved."
+    "allRightsReserved": "Harentsoa RANDRIAMAHOLIMANANA. All rights reserved."
   }
 }
