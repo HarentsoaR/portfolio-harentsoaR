@@ -75,11 +75,15 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> 
       {t('Hero.greeting')} <span className="text-[#76ABAE]">Harentsoa</span>.
     </motion.h1>
     <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-20 flex flex-col items-center justify-center">
-      <RotatingText
-        className="text-[#EEEEEE]/80 text-center"
-        text={[t('Hero.role1'), t('Hero.role2'), t('Hero.role3')]}
-        duration={2500}
-      />
+      <div className="flex items-center justify-center flex-wrap"> {/* Use flex-wrap for responsiveness */}
+        <span className="mr-2">{t('Hero.developerPrefix')}</span>
+        <RotatingText
+          className="inline-block text-[#76ABAE] font-bold"
+          text={[t('Hero.fullstackRole'), t('Hero.mobileRole'), t('Hero.webRole')]}
+          duration={3500} // Increased duration for a slower animation
+        />
+        <span className="ml-2">{t('Hero.developerSuffix')}</span>
+      </div>
       <RollingText
         className="text-[#EEEEEE]/70 text-center text-lg md:text-xl mt-2"
         text={[t('Hero.dynamicBioPhrase1'), t('Hero.dynamicBioPhrase2'), t('Hero.dynamicBioPhrase3')]}
