@@ -85,6 +85,13 @@ const projects = [
     technologies: ['NextJs', 'Tailwind CSS', 'React Hooks', 'Figma', 'UX/UI Design', 'IHM'],
     liveUrl: 'https://akoramg.netlify.app/',
   },
+  {
+    key: 'worldTour',
+    descriptionKey: 'worldTourDescription',
+    image: '/worldTour.png',
+    technologies: ['NextJs', 'Supabase', 'GSAP', 'Framer Motion', 'Tailwind CSS', 'Figma', 'UX/UI Design'],
+    liveUrl: 'https://world-tour-henna.vercel.app/home',
+  },
 ];
 
 export default function Home() {

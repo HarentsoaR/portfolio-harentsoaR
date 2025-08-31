@@ -95,13 +95,15 @@
     "scientificSocialNetwork": "Réseau Social Scientifique",
     "scientificSocialNetworkDescription": "Une plateforme de réseau social adaptée à la communauté scientifique, permettant aux chercheurs de se connecter, de partager des articles et de collaborer sur des projets. Les fonctionnalités incluent les profils d'utilisateurs, le partage de publications et les forums de discussion.",
     "aiTrainingGeneration": "Génération d'Entraînement IA",
-    "aiTrainingGenerationDescription": "Une application exploitant l'IA pour générer des programmes d'entraînement personnalisés. Les utilisateurs peuvent saisir leurs objectifs et préférences pour recevoir des plans d'entraînement sur mesure.",
+    "aiTrainingGenerationDescription": "Une application exploitant l'AI pour générer des programmes d'entraînement personnalisés. Les utilisateurs peuvent saisir leurs objectifs et préférences pour recevoir des plans d'entraînement sur mesure.",
     "carMusicParty": "Car Music Party",
     "carMusicPartyDescription": "Une application unique conçue pour synchroniser la lecture de musique sur plusieurs appareils dans une voiture, créant une expérience musicale partagée pour tous les passagers.",
     "dentalPracticeManagementSystem": "Système de Gestion de Cabinet Dentaire",
     "dentalPracticeManagementSystemDescription": "Un système complet pour la gestion des opérations d'un cabinet dentaire, y compris les rendez-vous des patients, les dossiers médicaux, la facturation et l'inventaire. Conçu pour l'efficacité et la facilité d'utilisation.",
     "akoraMG": "Akora MG",
-    "akoraMGDescription": "Découvrez l'artisanat malgache authentique et soutenez les artisans locaux grâce à notre marketplace alimentée par l'IA."
+    "akoraMGDescription": "Découvrez l'artisanat malgache authentique et soutenez les artisans locaux grâce à notre marketplace alimentée par l'IA.",
+    "worldTour": "Tour du Monde",
+    "worldTourDescription": "Embarquez pour un voyage virtuel autour du monde depuis le confort de votre maison avec cette application interactive."
   },
   "Contact": {
     "getInTouch": "Contactez-moi",
