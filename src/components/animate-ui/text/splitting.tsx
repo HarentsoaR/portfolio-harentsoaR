@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface SplittingTextProps {
   text: string;
@@ -12,6 +12,31 @@ interface SplittingTextProps {
   duration?: number; // Duration of each item's animation
   stagger?: number; // Delay between each item's animation
 }
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    transition: {
+      delayChildren: delay / 1000, // Convert ms to seconds for Framer Motion
+      staggerChildren: 0.05, // Default stagger
+    },
+  }),
+};
+
+const itemVariants: Variants = {
+  hidden: { y: "100%", opacity: 0 }, // Start from below, fully transparent
+  visible: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      damping: 12,
+      stiffness: 100,
+      duration: 0.6, // Default duration
+    },
+  },
+};
 
 export const SplittingText: React.FC<SplittingTextProps> = ({
   text,
@@ -24,49 +49,24 @@ export const SplittingText: React.FC<SplittingTextProps> = ({
 }) => {
   const words = text.split(' ');
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: delay / 1000, // Convert ms to seconds for Framer Motion
-        staggerChildren: stagger,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        damping: 12,
-        stiffness: 100,
-        duration: duration,
-      },
-    },
-  };
-
   return (
     <motion.div
-      className={`inline-block ${className}`}
+      className={`inline-block overflow-hidden ${className}`} // Added overflow-hidden to clip initial y:"100%"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      custom={delay} // Pass delay as custom prop to containerVariants
     >
       {words.map((word, wordIndex) => (
-        <span key={wordIndex} className="inline-block whitespace-nowrap">
+        <span key={wordIndex} className="inline-block whitespace-nowrap mr-1"> {/* Added mr-1 here */}
           {type === 'words' ? (
             <motion.span
               variants={itemVariants}
-              className={`inline-block mr-1 ${wordClassName ? wordClassName(word, wordIndex) : ''}`}
+              className={`inline-block ${wordClassName ? wordClassName(word, wordIndex) : ''}`}
             >
               {word}
             </motion.span>
           ) : (
-            // If type is 'chars', split each word into characters
             word.split('').map((char, charIndex) => (
               <motion.span
                 key={`${wordIndex}-${charIndex}`}
@@ -77,8 +77,6 @@ export const SplittingText: React.FC<SplittingTextProps> = ({
               </motion.span>
             ))
           )}
-          {/* Add a space between words if not the last word */}
-          {type === 'words' && wordIndex < words.length - 1 && ' '}
         </span>
       ))}
     </motion.div>
