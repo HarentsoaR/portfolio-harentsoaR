@@ -10,6 +10,7 @@
   },
   "Hero": {
     "greeting": "Bonjour, je suis",
+    "name": "Harentsoa",
     "developerPrefix": "Un",
     "fullstackRole": "Développeur Full-Stack",
     "mobileRole": "Développeur Mobile",
