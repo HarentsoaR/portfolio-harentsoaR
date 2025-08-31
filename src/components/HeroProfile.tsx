@@ -73,7 +73,7 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> 
     <motion.h1 layoutId="hero-title" className="text-4xl md:text-6xl font-bold text-[#EEEEEE] mb-4">
       {t('Hero.greeting')} <span className="text-[#76ABAE]">Harentsoa</span>.
     </motion.h1>
-    <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-16 md:h-8"> {/* Increased height for longer text */}
+    <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-20 md:h-10 flex items-center justify-center"> {/* Adjusted height and added flex for vertical centering */}
       <TypeAnimation 
         sequence={[
           t('Hero.role1'), 2000, 
