@@ -12,6 +12,7 @@ import { useActiveSection } from '@/hooks/useActiveSection';
 const navItems = [
   { name: 'Home', path: '/#hero-profile-section', id: 'hero-profile-section' },
   { name: 'Career', path: '/#career', id: 'career' },
+  { name: 'Services', path: '/#services', id: 'services' }, // New Services item
   { name: 'Skills', path: '/#skills', id: 'skills' },
   { name: 'Projects', path: '/#projects', id: 'projects' },
   { name: 'Contact', path: '/#contact', id: 'contact' },

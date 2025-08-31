@@ -41,6 +41,19 @@
     "position2022": "Juillet 2022 - Septembre 2023",
     "codeIgniterDescription": "Développement et maintenance d'applications web avec CodeIgniter et MySQL. Implémentation de nouvelles fonctionnalités et optimisation des existantes. Collaboration avec les designers et autres développeurs pour assurer le succès des projets."
   },
+  "ServicesSection": {
+    "titlePart1": "Mes",
+    "titlePart2": "Services",
+    "subtitle": "J'offre une gamme de services pour vous aider à construire et développer votre présence numérique.",
+    "webDevelopmentTitle": "Développement Web",
+    "webDevelopmentDescription": "Construction d'applications web réactives et performantes en utilisant des frameworks modernes comme Next.js, React et NestJS.",
+    "mobileDevelopmentTitle": "Développement d'Applications Mobiles",
+    "mobileDevelopmentDescription": "Création d'expériences mobiles intuitives et engageantes pour iOS et Android avec React Native et Swift/Kotlin.",
+    "backendApiDevelopmentTitle": "Développement Backend & API",
+    "backendApiDevelopmentDescription": "Conception de systèmes backend robustes et évolutifs et d'APIs RESTful avec Spring Boot, NestJS et Go.",
+    "technicalConsultingTitle": "Conseil Technique",
+    "technicalConsultingDescription": "Fournir des conseils d'experts et des solutions pour votre architecture logicielle, votre pile technologique et vos processus de développement."
+  },
   "SkillsPage": {
     "titlePart1": "Mes",
     "titlePart2": "Compétences",
@@ -89,6 +102,7 @@
     "portfolio": "Portfolio",
     "home": "Accueil",
     "career": "Carrière",
+    "services": "Services",
     "skills": "Compétences",
     "projects": "Projets",
     "contact": "Contact"

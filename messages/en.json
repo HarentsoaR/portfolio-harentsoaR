@@ -41,6 +41,19 @@
     "position2022": "July 2022 - September 2023",
     "codeIgniterDescription": "Developed and maintained web applications using CodeIgniter and MySQL. Implemented new features and optimized existing ones. Collaborated with designers and other developers to ensure project success."
   },
+  "ServicesSection": {
+    "titlePart1": "My",
+    "titlePart2": "Services",
+    "subtitle": "I offer a range of services to help you build and grow your digital presence.",
+    "webDevelopmentTitle": "Web Development",
+    "webDevelopmentDescription": "Building responsive, high-performance web applications using modern frameworks like Next.js, React, and NestJS.",
+    "mobileDevelopmentTitle": "Mobile App Development",
+    "mobileDevelopmentDescription": "Crafting intuitive and engaging mobile experiences for iOS and Android with React Native and Swift/Kotlin.",
+    "backendApiDevelopmentTitle": "Backend & API Development",
+    "backendApiDevelopmentDescription": "Designing robust and scalable backend systems and RESTful APIs with Spring Boot, NestJS, and Go.",
+    "technicalConsultingTitle": "Technical Consulting",
+    "technicalConsultingDescription": "Providing expert guidance and solutions for your software architecture, technology stack, and development processes."
+  },
   "SkillsPage": {
     "titlePart1": "My",
     "titlePart2": "Skills",
@@ -89,6 +102,7 @@
     "portfolio": "Portfolio",
     "home": "Home",
     "career": "Career",
+    "services": "Services",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact"

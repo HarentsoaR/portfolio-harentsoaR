@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { Career } from '@/components/Career';
+import { ServicesSection } from '@/components/ServicesSection'; // Import the new ServicesSection
 
 const HeroProfile = dynamic(() => import('@/components/HeroProfile').then(module => ({ default: module.HeroProfile })), { ssr: false });
 const ProjectCard = dynamic(() => import('@/components/ProjectCard').then(module => ({ default: module.ProjectCard })), { ssr: false });
@@ -89,7 +90,7 @@ export default function Home() {
         <main className="pt-16">
           {/* HERO SECTION */}
           <motion.section
-            id="hero"
+            id="hero-profile-section"
             className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#222831] to-[#31363F] relative"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -108,6 +109,17 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <Career />
+          </motion.section>
+
+          {/* SERVICES SECTION */}
+          <motion.section
+            id="services"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
+            <ServicesSection />
           </motion.section>
 
           {/* SKILLS SECTION */}
