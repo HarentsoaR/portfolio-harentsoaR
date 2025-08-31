@@ -33,3 +33,33 @@ p, span, div {
 code, pre {
   font-family: var(--font-geist-mono); /* Use Geist Mono for code */
 }
+
+/* New Flipping Loader Styles */
+.flipping-loader {
+   height: 32px; /* Adjusted size */
+   display: grid;
+   grid-template-columns: repeat(5, 32px); /* Adjusted size */
+   grid-gap: 8px; /* Adjusted gap */
+}
+
+.flipping-loader div {
+   animation: flipping-animation 1.25s calc(var(--delay) * 1s) infinite ease;
+   background-color: var(--color-teal); /* Using theme color */
+   border-radius: 4px; /* Slightly rounded corners */
+}
+
+.flipping-loader div:nth-of-type(1) { --delay: 0.25; }
+.flipping-loader div:nth-of-type(2) { --delay: 0.5; }
+.flipping-loader div:nth-of-type(3) { --delay: 0.75; }
+.flipping-loader div:nth-of-type(4) { --delay: 1; }
+.flipping-loader div:nth-of-type(5) { --delay: 1.25; }
+
+@keyframes flipping-animation {
+   0% {
+      transform: perspective(64px) rotateY(-180deg); /* Adjusted perspective */
+   }
+
+   50% {
+      transform: perspective(64px) rotateY(0deg);
+   }
+}
