@@ -30,6 +30,7 @@
       "degreeLabel": "Degree",
       "locationLabel": "Location",
       "availabilityLabel": "Availability",
+      "availability": "Available for projects",
       "emailLabel": "Email"
     },
     "languageProficiency": "Language Proficiency"

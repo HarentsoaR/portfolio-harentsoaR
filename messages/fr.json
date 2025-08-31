@@ -30,6 +30,7 @@
       "degreeLabel": "Diplôme",
       "locationLabel": "Localisation",
       "availabilityLabel": "Disponibilité",
+      "availability": "Disponible pour des projets",
       "emailLabel": "Email"
     },
     "languageProficiency": "Maîtrise des Langues"
