@@ -78,6 +78,13 @@ const projects = [
     technologies: ['Figma', 'UX/UI Design', 'Swift', 'NuxtJs', 'MongoDB', 'Golang'],
     liveUrl: 'https://dentaheal.netlify.app/',
   },
+  {
+    key: 'akoraMG',
+    descriptionKey: 'akoraMGDescription',
+    image: '/next.svg', // Placeholder image
+    technologies: ['NextJs', 'Tailwind CSS', 'React Hooks', 'Figma', 'UX/UI Design', 'IHM'],
+    liveUrl: 'https://akoramg.netlify.app/',
+  },
 ];
 
 export default function Home() {

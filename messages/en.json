@@ -1,36 +1,45 @@
 {
+  "Header": {
+    "portfolio": "Portfolio",
+    "home": "Home",
+    "career": "Career",
+    "services": "Services",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
   "Hero": {
     "greeting": "Hello, I'm",
     "role1": "A Full-Stack Developer",
     "role2": "A Mobile Developer",
-    "role3": "A Software Engineer",
-    "dynamicBioPhrase1": "Crafting powerful digital solutions.",
-    "dynamicBioPhrase2": "Designing seamless user experiences.",
-    "dynamicBioPhrase3": "Bringing innovation to life through code.",
-    "learnMore": "Learn More",
-    "hideProfile": "Hide Profile"
+    "role3": "A UI/UX Designer",
+    "dynamicBioPhrase1": "Building scalable web applications.",
+    "dynamicBioPhrase2": "Crafting intuitive user experiences.",
+    "dynamicBioPhrase3": "Bringing ideas to life with code.",
+    "learnMore": "Learn More About Me"
   },
   "ProfileSection": {
-    "status": "Full-Stack & Mobile Developer",
+    "status": "Full-Stack Developer | Mobile Developer | UI/UX Designer",
     "aboutMe": "About Me",
-    "languageProficiency": "Language Proficiency",
     "personalInfo": {
-      "degreeLabel": "Degree",
+      "birthday": "May 24, 2001",
       "degree": "Master's Degree in Software Engineering",
-      "locationLabel": "Location",
       "location": "Antananarivo, Madagascar",
+      "phone": "+261 34 70 000 00",
+      "email": "randriamaholimanana1@gmail.com",
+      "degreeLabel": "Degree",
+      "locationLabel": "Location",
       "availabilityLabel": "Availability",
-      "availability": "Available for new opportunities",
-      "emailLabel": "Email",
-      "email": "randriamaholimanana1@gmail.com"
-    }
+      "emailLabel": "Email"
+    },
+    "languageProficiency": "Language Proficiency"
   },
   "Career": {
     "pageTitle": "My Career Journey",
-    "pageSubtitle": "A timeline of my academic and professional achievements.",
+    "pageSubtitle": "A timeline of my academic and professional growth.",
     "education": "Education",
     "masterDegree": "Master's Degree in Software Engineering",
-    "bachelorDegree": "Bachelor's Degree in Computer Science",
+    "bachelorDegree": "Bachelor's Degree in Software Engineering",
     "eni": "National School of Computer Science (ENI)",
     "period2023-2025": "2023 - 2025",
     "period2019-2023": "2019 - 2023",
@@ -38,29 +47,33 @@
     "fullStackDeveloper": "Full-Stack Developer",
     "beysOutsourcing": "Beys Outsourcing",
     "position2023": "October 2023 - Present",
-    "fullStackDescription": "Developed and maintained web applications using React, Next.js, NestJS, and PostgreSQL. Implemented RESTful APIs and integrated third-party services. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+    "fullStackDescription": "Developed and maintained web applications using Next.js, NestJS, and PostgreSQL. Implemented robust APIs and ensured seamless integration between frontend and backend systems. Focused on creating scalable and efficient solutions.",
     "codeIgniterDeveloper": "CodeIgniter Developer",
     "oneEnvironment": "One Environment",
     "position2022": "July 2022 - September 2023",
-    "codeIgniterDescription": "Developed and maintained web applications using CodeIgniter and MySQL. Implemented new features and optimized existing ones. Collaborated with designers and other developers to ensure project success."
+    "codeIgniterDescription": "Designed and developed web applications using CodeIgniter framework. Responsible for database management, API development, and ensuring application performance and security. Collaborated with teams to deliver high-quality software solutions.",
+    "internship": "Internship",
+    "companyA": "Company A",
+    "period2021": "Summer 2021",
+    "internshipDescription": "Assisted in the development of internal tools and learned best practices in software development."
   },
   "ServicesSection": {
     "titlePart1": "My",
     "titlePart2": "Services",
-    "subtitle": "I offer a range of services to help you build and grow your digital presence.",
+    "subtitle": "I offer a range of services to help bring your digital ideas to life.",
     "webDevelopmentTitle": "Web Development",
-    "webDevelopmentDescription": "Building responsive, high-performance web applications using modern frameworks like Next.js, React, and NestJS.",
-    "mobileDevelopmentTitle": "Mobile App Development",
-    "mobileDevelopmentDescription": "Crafting intuitive and engaging mobile experiences for iOS and Android with React Native and Swift/Kotlin.",
+    "webDevelopmentDescription": "Building responsive, high-performance web applications using modern frameworks and technologies.",
+    "mobileDevelopmentTitle": "Mobile Development",
+    "mobileDevelopmentDescription": "Creating intuitive and engaging mobile applications for iOS and Android platforms.",
     "backendApiDevelopmentTitle": "Backend & API Development",
-    "backendApiDevelopmentDescription": "Designing robust and scalable backend systems and RESTful APIs with Spring Boot, NestJS, and Go.",
+    "backendApiDevelopmentDescription": "Designing and implementing robust, scalable, and secure backend systems and APIs.",
     "technicalConsultingTitle": "Technical Consulting",
-    "technicalConsultingDescription": "Providing expert guidance and solutions for your software architecture, technology stack, and development processes."
+    "technicalConsultingDescription": "Providing expert advice and solutions for your technical challenges and project planning."
   },
   "SkillsPage": {
     "titlePart1": "My",
     "titlePart2": "Skills",
-    "description": "Here are some of the technologies and tools I've worked with throughout my career.",
+    "description": "Here are some of the technologies and tools I've worked with, categorized by area of expertise.",
     "Backend": "Backend",
     "Frontend": "Frontend",
     "Databases": "Databases",
@@ -70,27 +83,29 @@
   "IndexPage": {
     "featuredProjects": "Featured Projects",
     "schoolManagementSystem": "School Management System",
-    "schoolManagementSystemDescription": "A comprehensive system for managing school operations, including student records, courses, and grades.",
+    "schoolManagementSystemDescription": "A comprehensive web application for managing school operations, including student records, courses, and grades. Features user authentication, role-based access control, and reporting functionalities.",
     "wineManagementApplication": "Wine Management Application",
-    "wineManagementApplicationDescription": "An application designed for managing wine inventory, sales, and vineyard operations.",
+    "wineManagementApplicationDescription": "An application designed for vineyards to manage their wine production, inventory, and sales. Includes features for tracking grape harvests, fermentation processes, and bottle aging.",
     "personalPortfolioWebsite": "Personal Portfolio Website",
-    "personalPortfolioWebsiteDescription": "My personal portfolio website showcasing my projects, skills, and career journey.",
+    "personalPortfolioWebsiteDescription": "My personal portfolio website showcasing my projects, skills, and professional journey. Built with modern web technologies to provide a smooth and interactive user experience.",
     "carSalesManagementPlatform": "Car Sales Management Platform",
-    "carSalesManagementPlatformDescription": "A platform for managing car sales, inventory, and customer data.",
+    "carSalesManagementPlatformDescription": "A platform for managing car sales, inventory, and customer information. Features include vehicle listing, sales tracking, and report generation.",
     "realTimeWeatherApplication": "Real-Time Weather Application",
-    "realTimeWeatherApplicationDescription": "A mobile application that provides real-time weather updates based on the user's location.",
+    "realTimeWeatherApplicationDescription": "A mobile application that provides real-time weather updates based on the user's location or selected city. Displays current temperature, forecasts, and other meteorological data.",
     "scientificSocialNetwork": "Scientific Social Network",
-    "scientificSocialNetworkDescription": "A social network platform designed for scientific collaboration and knowledge sharing.",
+    "scientificSocialNetworkDescription": "A social networking platform tailored for the scientific community, allowing researchers to connect, share papers, and collaborate on projects. Features include user profiles, publication sharing, and discussion forums.",
     "aiTrainingGeneration": "AI Training Generation",
-    "aiTrainingGenerationDescription": "A project focused on generating AI training data using machine learning techniques.",
+    "aiTrainingGenerationDescription": "An application leveraging AI to generate personalized training programs. Users can input their goals and preferences to receive customized workout plans.",
     "carMusicParty": "Car Music Party",
-    "carMusicPartyDescription": "A mobile and web application for creating and managing collaborative music playlists.",
+    "carMusicPartyDescription": "A unique application designed to synchronize music playback across multiple devices in a car, creating a shared music experience for all passengers.",
     "dentalPracticeManagementSystem": "Dental Practice Management System",
-    "dentalPracticeManagementSystemDescription": "A comprehensive system for managing dental practice operations, including appointments, patient records, and billing."
+    "dentalPracticeManagementSystemDescription": "A comprehensive system for managing dental practice operations, including patient appointments, medical records, billing, and inventory. Designed for efficiency and ease of use.",
+    "akoraMG": "Akora MG",
+    "akoraMGDescription": "Discover authentic Malagasy crafts and support local artisans through our AI-powered marketplace."
   },
   "Contact": {
     "getInTouch": "Get In Touch",
-    "intro": "Have a question or want to work together? Feel free to reach out!",
+    "intro": "Have a project in mind or just want to say hello? Feel free to reach out!",
     "contactInfo": "Contact Information",
     "name": "Your Name",
     "email": "Your Email",
@@ -98,17 +113,8 @@
     "sendMessage": "Send Message",
     "sending": "Sending...",
     "messageSent": "Message Sent",
-    "thanks": "Thank you for your message! I'll get back to you soon.",
+    "thanks": "Thank you for your message! I'll get back to you shortly.",
     "error": "Oops! Something went wrong. Please try again later."
-  },
-  "Header": {
-    "portfolio": "Portfolio",
-    "home": "Home",
-    "career": "Career",
-    "services": "Services",
-    "skills": "Skills",
-    "projects": "Projects",
-    "contact": "Contact"
   },
   "Footer": {
     "allRightsReserved": "Harentsoa RANDRIAMAHOLIMANANA. All rights reserved."
