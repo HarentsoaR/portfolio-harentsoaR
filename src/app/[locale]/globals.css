@@ -34,32 +34,43 @@ code, pre {
   font-family: var(--font-geist-mono); /* Use Geist Mono for code */
 }
 
-/* New Flipping Loader Styles */
+/* New Flipping Loader Styles (3x3 grid) */
 .flipping-loader {
-   height: 32px; /* Adjusted size */
+   width: 56px; /* Adjusted size to be smaller */
+   height: 56px; /* Adjusted size to be smaller */
    display: grid;
-   grid-template-columns: repeat(5, 32px); /* Adjusted size */
-   grid-gap: 8px; /* Adjusted gap */
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   gap: 2px; /* Small gap between squares */
 }
 
 .flipping-loader div {
-   animation: flipping-animation 1.25s calc(var(--delay) * 1s) infinite ease;
+   animation: flipping-animation 1.5s calc(var(--delay) * 1s) infinite backwards;
    background-color: var(--color-teal); /* Using theme color */
-   border-radius: 4px; /* Slightly rounded corners */
+   border-radius: 2px; /* Slightly rounded corners */
 }
 
-.flipping-loader div:nth-of-type(1) { --delay: 0.25; }
-.flipping-loader div:nth-of-type(2) { --delay: 0.5; }
-.flipping-loader div:nth-of-type(3) { --delay: 0.75; }
-.flipping-loader div:nth-of-type(4) { --delay: 1; }
-.flipping-loader div:nth-of-type(5) { --delay: 1.25; }
+.flipping-loader div:nth-child(1) { --delay: 0.1; }
+.flipping-loader div:nth-child(2) { --delay: 0.2; }
+.flipping-loader div:nth-child(3) { --delay: 0.3; }
+.flipping-loader div:nth-child(4) { --delay: 0.4; }
+.flipping-loader div:nth-child(5) { --delay: 0.5; }
+.flipping-loader div:nth-child(6) { --delay: 0.6; }
+.flipping-loader div:nth-child(7) { --delay: 0.7; }
+.flipping-loader div:nth-child(8) { --delay: 0.8; }
+.flipping-loader div:nth-child(9) { --delay: 0.9; }
 
 @keyframes flipping-animation {
    0% {
-      transform: perspective(64px) rotateY(-180deg); /* Adjusted perspective */
+      transform: perspective(56px) rotateX(-90deg); /* Adjusted perspective to match new size */
    }
 
-   50% {
-      transform: perspective(64px) rotateY(0deg);
+   50%, 75% {
+      transform: perspective(56px) rotateX(0);
+   }
+
+   100% {
+      opacity: 0;
+      transform: perspective(56px) rotateX(0);
    }
 }
