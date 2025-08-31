@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl';
 import { TypeAnimation } from 'react-type-animation';
 import { FiChevronDown, FiX } from 'react-icons/fi';
 import React from 'react';
+import { SplittingText } from '@/components/animate-ui/text/splitting'; // Import the new component
 
 type TranslationFunction = ReturnType<typeof useTranslations>;
 
@@ -71,7 +72,11 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> 
       <Image src="/usages/pfp.jpg" alt="Harentsoa" layout="fill" objectFit="cover" className="rounded-full shadow-lg border-2 border-[#76ABAE]" priority />
     </motion.div>
     <motion.h1 layoutId="hero-title" className="text-4xl md:text-6xl font-bold text-[#EEEEEE] mb-4">
-      {t('Hero.greeting')} <span className="text-[#76ABAE]">Harentsoa</span>.
+      <SplittingText
+        text={`${t('Hero.greeting')} Harentsoa.`}
+        className="inline-block"
+        wordClassName={(word) => word.replace('.', '') === 'Harentsoa' ? 'text-[#76ABAE]' : ''} // Apply specific color to 'Harentsoa'
+      />
     </motion.h1>
     <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-20 md:h-10 flex items-center justify-center"> {/* Adjusted height and added flex for vertical centering */}
       <TypeAnimation 
@@ -141,7 +146,11 @@ const ExpandedProfile: React.FC<{ onToggle: () => void; t: TranslationFunction }
         </motion.div>
         <div className="flex flex-col items-center text-center space-y-2">
           <motion.h2 layoutId="hero-title" className="text-3xl font-bold text-[#76ABAE]">
-            Harentsoa RANDRIAMAHOLIMANANA
+            <SplittingText
+              text="Harentsoa RANDRIAMAHOLIMANANA"
+              className="inline-block"
+              // No specific wordClassName needed here as the whole h2 is already teal
+            />
           </motion.h2>
           <motion.p layoutId="hero-subtitle" className="text-lg font-light text-[#EEEEEE]/80">
             {t('ProfileSection.status')}
