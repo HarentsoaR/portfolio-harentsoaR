@@ -81,7 +81,11 @@ export function Contact() {
           >
             <h3 className="text-2xl font-semibold text-[#76ABAE]">{t('contactInfo')}</h3>
             <div className="space-y-6">
-              <InfoItem icon={<FaMapMarkerAlt />} text="Antananarivo, Madagascar" />
+              <InfoItem 
+                icon={<FaMapMarkerAlt />} 
+                text="Antananarivo, Madagascar" 
+                href="https://www.google.com/maps/place/Antananarivo,+Madagascar/@-18.9153836,47.4732862,12z" 
+              />
               <InfoItem icon={<FaEnvelope />} text="randriamaholimanana1@gmail.com" href="mailto:randriamaholimanana1@gmail.com" />
               <InfoItem icon={<FaLinkedin />} text="LinkedIn Profile" href="https://linkedin.com/in/harentsoa-randriamaholimanana-a005902a4" />
               <InfoItem icon={<FaGithub />} text="GitHub Profile" href="https://github.com/HarentsoaR" />
