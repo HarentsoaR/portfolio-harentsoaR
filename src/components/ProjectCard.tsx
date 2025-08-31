@@ -29,8 +29,9 @@ const imageVariants = {
   hover: { scale: 1.05, y: "-2%", transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
+// Adjusted content overlay variants for top alignment
 const contentOverlayVariants = {
-  rest: { opacity: 0, y: 10 },
+  rest: { opacity: 0, y: -10 }, // Starts slightly above and slides down
   hover: { opacity: 1, y: 0, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
 };
 
@@ -68,12 +69,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute top-0 left-0 right-0 z-10 hidden lg:flex flex-col justify-end p-4 md:p-5 text-white bg-[#222831]/90 rounded-b-xl overflow-y-auto"
+            className="absolute inset-x-0 top-0 z-10 hidden lg:flex flex-col justify-start p-4 md:p-5 text-white bg-[#222831]/90 rounded-t-xl overflow-y-auto"
             initial="rest"
             animate="hover"
             exit="rest"
             variants={contentOverlayVariants}
-            style={{ bottom: '80px' }} // Fixed bottom to ensure space for title/links
+            style={{ bottom: '80px' }} // Still leaves space for the title/links at the bottom
           >
             <motion.p variants={itemVariants} className="text-sm md:text-base font-medium mb-3 leading-snug drop-shadow-md">
               {description}
