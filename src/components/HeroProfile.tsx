@@ -19,8 +19,8 @@ const personalInfoData = (t: TranslationFunction) => [
   { icon: FaEnvelope, text: t('ProfileSection.personalInfo.emailLabel'), detail: t('ProfileSection.personalInfo.email') },
 ];
 const languages = [
-  { name: 'Français', level: 'Courant (C1)', percentage: 90 },
-  { name: 'Anglais', level: 'Professionnel (B2)', percentage: 75 },
+  { name: 'Français', level: 'B2', percentage: 90 },
+  { name: 'Anglais', level: 'Average', percentage: 75 },
 ];
 
 // --- MAIN COMPONENT ---
