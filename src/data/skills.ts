@@ -5,7 +5,7 @@ import {
   SiPhp, SiCodeigniter, SiJavascript, SiReact, SiNextdotjs, SiNestjs,
   SiSpringboot, SiPostgresql, SiMysql, SiGit, SiJsonwebtokens,
   SiAuth0, SiApollographql, SiTailwindcss, SiCss3, SiHtml5, SiMongodb, SiSqlite, SiFirebase, SiGo, SiNuxtdotjs, SiSwift,
-  SiJira, SiKubernetes, SiKotlin // Ajout de Kotlin
+  SiJira, SiKubernetes, SiKotlin, SiFigma // Ajout de Figma
 } from 'react-icons/si';
 
 // On définit un type pour les catégories pour éviter les fautes de frappe
@@ -55,7 +55,8 @@ export const skillsData: Skill[] = [
   { name: 'OAuth', icon: React.createElement(SiAuth0, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
   { name: 'API REST', icon: React.createElement(SiApollographql, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
   { name: 'JIRA', icon: React.createElement(SiJira, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
-  { name: 'Kubernetes', icon: React.createElement(SiKubernetes, { className: 'h-8 w-8' }), category: 'Tools & Concepts' }
+  { name: 'Kubernetes', icon: React.createElement(SiKubernetes, { className: 'h-8 w-8' }), category: 'Tools & Concepts' },
+  { name: 'Figma', icon: React.createElement(SiFigma, { className: 'h-8 w-8' }), category: 'Tools & Concepts' } // Ajout de Figma
 ];
 
 // On type l'objet final qui sera un Record (ou dictionnaire)

@@ -73,8 +73,20 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> 
     <motion.h1 layoutId="hero-title" className="text-4xl md:text-6xl font-bold text-[#EEEEEE] mb-4">
       {t('Hero.greeting')} <span className="text-[#76ABAE]">Harentsoa</span>.
     </motion.h1>
-    <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-8">
-      <TypeAnimation sequence={[t('Hero.role1'), 2000, t('Hero.role2'), 2000, t('Hero.role3'), 2000]} wrapper="span" cursor={true} repeat={Infinity} />
+    <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-16 md:h-8"> {/* Increased height for longer text */}
+      <TypeAnimation 
+        sequence={[
+          t('Hero.role1'), 2000, 
+          t('Hero.role2'), 2000, 
+          t('Hero.role3'), 2000,
+          t('Hero.dynamicBioPhrase1'), 1500,
+          t('Hero.dynamicBioPhrase2'), 1500,
+          t('Hero.dynamicBioPhrase3'), 1500,
+        ]} 
+        wrapper="span" 
+        cursor={true} 
+        repeat={Infinity} 
+      />
     </motion.div>
     <motion.button
       layoutId="hero-button"

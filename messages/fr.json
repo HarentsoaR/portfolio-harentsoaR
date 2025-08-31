@@ -4,6 +4,9 @@
     "role1": "Un Développeur Full-Stack",
     "role2": "Un Développeur Mobile",
     "role3": "Un Ingénieur Logiciel",
+    "dynamicBioPhrase1": "Transformer les idées en solutions numériques puissantes.",
+    "dynamicBioPhrase2": "Passionné par la création d'expériences utilisateur fluides.",
+    "dynamicBioPhrase3": "Donner vie à l'innovation, une ligne de code à la fois.",
     "learnMore": "En savoir plus",
     "hideProfile": "Masquer le profil"
   },
@@ -73,7 +76,7 @@
     "personalPortfolioWebsite": "Site Web de Portfolio Personnel",
     "personalPortfolioWebsiteDescription": "Mon site web de portfolio personnel présentant mes projets, compétences et parcours professionnel. Construit avec Next.js pour le rendu côté serveur et la génération de sites statiques, stylisé avec Tailwind CSS, et amélioré avec Framer Motion pour les animations et Next-intl pour l'internationalisation.",
     "carSalesManagementPlatform": "Plateforme de Gestion des Ventes Automobiles",
-    "carSalesManagementPlatformDescription": "Une plateforme pour la gestion des ventes de voitures, des stocks et des données clients. Le projet comprend une application de bureau construite avec Java et une application web développée avec PHP, HTML et CSS, avec FPDF pour la génération de rapports.",
+    "carSalesManagementPlatformDescription": "A platform for managing car sales, inventory, and customer data. The project includes a desktop application built with Java and a web application developed using PHP, HTML, and CSS, with FPDF for report generation.",
     "realTimeWeatherApplication": "Application Météo en Temps Réel",
     "realTimeWeatherApplicationDescription": "Une application mobile qui fournit des mises à jour météorologiques en temps réel basées sur la localisation de l'utilisateur. Développée avec React Native et JavaScript, stylisée avec Tailwind CSS, et intégrée à une API météo pour la récupération des données.",
     "scientificSocialNetwork": "Réseau Social Scientifique",
