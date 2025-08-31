@@ -55,7 +55,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-20 md:py-28 bg-[#31363F] text-[#EEEEEE]">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl"> {/* Added max-w-6xl here */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}

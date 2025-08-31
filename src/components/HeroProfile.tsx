@@ -45,7 +45,7 @@ export function HeroProfile() {
       animate={{ borderRadius: showProfile ? "2rem" : "0rem" }}
       transition={{ type: 'spring', stiffness: 100, damping: 20 }}
     >
-      <div className={`container mx-auto px-6 text-center transition-all duration-500 ${showProfile ? 'py-10 md:py-16' : 'py-20'}`}>
+      <div className={`container mx-auto px-6 max-w-6xl text-center transition-all duration-500 ${showProfile ? 'py-10 md:py-16' : 'py-20'}`}> {/* Added max-w-6xl here */}
         <AnimatePresence mode="wait">
           {showProfile ? (
             <ExpandedProfile key="expanded" onToggle={handleToggle} t={t} />

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import React from 'react'; // Indispensable en TSX
-import { categorizedSkills, SkillCategory } from '../data/skills'; // Adaptez le chemin
-import { useTranslations } from 'next-intl'; // Import useTranslations
+import React from 'react';
+import { categorizedSkills, SkillCategory } from '../data/skills';
+import { useTranslations } from 'next-intl';
 
 // Définition des animations pour Framer Motion (pas de changement ici)
 const containerVariants = {
@@ -20,14 +20,12 @@ const itemVariants = {
 };
 
 export const Skills: React.FC = () => {
-  const t = useTranslations('SkillsPage'); // Initialize useTranslations with a namespace
-  // TypeScript sait que "categorizedSkills" est de type Record<SkillCategory, Skill[]>
-  // Mais Object.keys retourne un string[]. On le caste pour plus de sûreté.
+  const t = useTranslations('SkillsPage');
   const categories = Object.keys(categorizedSkills) as SkillCategory[];
 
   return (
     <section id="skills" className="py-20 bg-[#222831] text-[#EEEEEE]">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl"> {/* Added max-w-6xl here */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}

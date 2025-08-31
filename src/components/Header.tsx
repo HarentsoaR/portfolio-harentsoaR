@@ -2,24 +2,22 @@
 
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-// Removed: import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { useScroll } from '@/hooks/useScroll';
 import { AnimatedHamburgerIcon } from './AnimatedHamburgerIcon';
 import LocalSwitcher from './local-switcher';
-import { useActiveSection } from '@/hooks/useActiveSection'; // Import the new hook
+import { useActiveSection } from '@/hooks/useActiveSection';
 
 const navItems = [
   { name: 'Home', path: '/#hero-profile-section', id: 'hero-profile-section' },
   { name: 'Career', path: '/#career', id: 'career' },
   { name: 'Skills', path: '/#skills', id: 'skills' },
-  { name: 'Projects', path: '/#projects', id: 'projects' }, // Added Projects nav item
+  { name: 'Projects', path: '/#projects', id: 'projects' },
   { name: 'Contact', path: '/#contact', id: 'contact' },
 ];
 
 export function Header() {
-  // Removed: const pathname = usePathname();
   const t = useTranslations('Header');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isScrolled = useScroll();
@@ -33,7 +31,7 @@ export function Header() {
   }, []);
 
   const sectionIds = navItems.map(item => item.id);
-  const activeSectionId = useActiveSection(sectionIds, headerHeight + 10); // Add a small buffer
+  const activeSectionId = useActiveSection(sectionIds, headerHeight + 10);
 
   const mobileMenuVariants = {
     open: {
@@ -60,7 +58,7 @@ export function Header() {
         isScrolled ? 'py-2 bg-[#222831]/90 backdrop-blur-lg shadow-md' : 'py-4 bg-[#222831]'
       }`}
     >
-      <nav className="container mx-auto px-4">
+      <nav className="container mx-auto px-4 max-w-7xl"> {/* Added max-w-7xl here */}
         <div className="flex justify-between items-center">
           <Link href="/" className="text-xl font-bold text-[#76ABAE] hover:opacity-80 transition-opacity">
             {t('portfolio')}
