@@ -61,8 +61,8 @@ const projects = [
     key: 'aiTrainingGeneration',
     descriptionKey: 'aiTrainingGenerationDescription',
     image: '/ai-training.png',
-    technologies: ['Python', 'PyTorch', 'Machine Learning', 'Data Augmentation'],
-    gitUrls: [{ label: 'AI Training', url: 'https://github.com/HarentsoaR/ai-training-generation' }],
+    technologies: ['NextJS', 'GEMINI API', 'AI', 'TAILWIND'],
+    liveUrl: 'https://dailyworkoutgenerator.netlify.app/',
   },
   {
     key: 'carMusicParty',
@@ -76,7 +76,7 @@ const projects = [
     descriptionKey: 'dentalPracticeManagementSystemDescription',
     image: '/dentalcare.jpg',
     technologies: ['Figma', 'UX/UI Design', 'Swift', 'NuxtJs', 'MongoDB', 'Golang'],
-    gitUrls: [{ label: 'Dentist Nuxt', url: 'https://github.com/HarentsoaR/dentistNuxt' }, { label: 'Dentist API', url: 'https://github.com/HarentsoaR/dentistApi' }, { label: 'Dentist Swift', url: 'https://github.com/HarentsoaR/dentistSwift' }],
+    liveUrl: 'https://dentaheal.netlify.app/',
   },
 ];
 
