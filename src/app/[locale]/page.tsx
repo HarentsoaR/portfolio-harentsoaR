@@ -60,14 +60,14 @@ const projects = [
   {
     key: 'aiTrainingGeneration',
     descriptionKey: 'aiTrainingGenerationDescription',
-    image: '/ai-training.png',
+    image: '/dailyWorkout.png',
     technologies: ['NextJS', 'GEMINI API', 'AI', 'TAILWIND'],
     liveUrl: 'https://dailyworkoutgenerator.netlify.app/',
   },
   {
     key: 'carMusicParty',
     descriptionKey: 'carMusicPartyDescription',
-    image: '/car-music-party.png',
+    image: '/CarMusicParty.png',
     technologies: ['React Native', 'NextJs', 'Firebase', 'Socket.IO', 'API', 'Tailwind CSS'],
     gitUrls: [{ label: 'CarMusicParty', url: 'https://github.com/HarentsoaR/car-music-party' }],
   },
@@ -81,7 +81,7 @@ const projects = [
   {
     key: 'akoraMG',
     descriptionKey: 'akoraMGDescription',
-    image: '/next.svg', // Placeholder image
+    image: '/akoraMg.png', // Updated image path
     technologies: ['NextJs', 'Tailwind CSS', 'React Hooks', 'Figma', 'UX/UI Design', 'IHM'],
     liveUrl: 'https://akoramg.netlify.app/',
   },
