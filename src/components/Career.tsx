@@ -6,7 +6,6 @@ import { FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 const educationData = [
   { degree: 'masterDegree', institution: 'eni', period: 'period2023' },
   { degree: 'bachelorDegree', institution: 'eni', period: 'period2020' },
-  { degree: 'baccalaureate', institution: 'highSchool', period: 'completed2019' },
 ];
 
 const experienceData = [
