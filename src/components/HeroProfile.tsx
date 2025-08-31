@@ -5,9 +5,10 @@ import { FaGithub, FaLinkedin, FaGraduationCap, FaMapMarkerAlt, FaBriefcase, FaE
 import { motion, AnimatePresence } from 'framer-motion';
 import { useProfile } from '@/contexts/ProfileContext';
 import { useTranslations } from 'next-intl';
-import { TypeAnimation } from 'react-type-animation';
 import { FiChevronDown, FiX } from 'react-icons/fi';
 import React from 'react';
+import { RotatingText } from '@/components/animate-ui/text/rotating'; // Import new component
+import { RollingText } from '@/components/animate-ui/text/rolling';   // Import new component
 
 type TranslationFunction = ReturnType<typeof useTranslations>;
 
@@ -73,19 +74,16 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> 
     <motion.h1 layoutId="hero-title" className="text-4xl md:text-6xl font-bold text-[#EEEEEE] mb-4">
       {t('Hero.greeting')} <span className="text-[#76ABAE]">Harentsoa</span>.
     </motion.h1>
-    <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-20 md:h-10 flex items-center justify-center"> {/* Adjusted height and added flex for vertical centering */}
-      <TypeAnimation 
-        sequence={[
-          t('Hero.role1'), 2000, 
-          t('Hero.role2'), 2000, 
-          t('Hero.role3'), 2000,
-          t('Hero.dynamicBioPhrase1'), 1500,
-          t('Hero.dynamicBioPhrase2'), 1500,
-          t('Hero.dynamicBioPhrase3'), 1500,
-        ]} 
-        wrapper="span" 
-        cursor={true} 
-        repeat={Infinity} 
+    <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-20 flex flex-col items-center justify-center">
+      <RotatingText
+        className="text-[#EEEEEE]/80 text-center"
+        text={[t('Hero.role1'), t('Hero.role2'), t('Hero.role3')]}
+        duration={2500}
+      />
+      <RollingText
+        className="text-[#EEEEEE]/70 text-center text-lg md:text-xl mt-2"
+        text={[t('Hero.dynamicBioPhrase1'), t('Hero.dynamicBioPhrase2'), t('Hero.dynamicBioPhrase3')]}
+        duration={3000}
       />
     </motion.div>
     <motion.button
