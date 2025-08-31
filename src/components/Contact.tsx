@@ -1,12 +1,9 @@
-// src/components/Contact.tsx
-
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import { useTranslations } from 'next-intl';
 import { FaLinkedin, FaGithub, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
-// Removed: import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
 
 // Reusable component for contact info items
 const InfoItem: React.FC<{ icon: React.ReactNode; text: string; href?: string }> = ({ icon, text, href }) => (
@@ -56,8 +53,6 @@ export function Contact() {
       });
   };
 
-  // Removed: const yourLocation = { lat: -18.8792, lng: 47.5079 }; // Example: Antananarivo, Madagascar. Change to yours.
-
   return (
     <section id="contact" className="py-20 md:py-28 bg-[#31363F] text-[#EEEEEE]">
       <div className="container mx-auto px-6">
@@ -99,7 +94,7 @@ export function Contact() {
               }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.960205253805!2d47.48060!3d-18.91510!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU0JzU0LjQiUyA0N8KwMjgnNDkuNyJF!5e0!3m2!1sen!2smg!4v1678912345678!5m2!1sen!2smg"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3826.960205253805!2d47.474175000000005!3d-18.913916666666668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDU0JzUwLjEiUyA0N8KwMjgnMzYuMyJF!5e0!3m2!1sen!2smg!4v1719490000000!5m2!1sen!2smg"
                 className="w-full h-full min-h-[300px]"
                 style={{ border: 0 }}
                 allowFullScreen={true}
