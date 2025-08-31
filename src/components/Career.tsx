@@ -4,8 +4,8 @@ import { TimelineItem } from './TimelineItem';
 import { FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 
 const educationData = [
-  { degree: 'masterDegree', institution: 'eni', period: 'period2023' },
-  { degree: 'bachelorDegree', institution: 'eni', period: 'period2020' },
+  { degree: 'masterDegree', institution: 'eni', period: 'period2023-2025' },
+  { degree: 'bachelorDegree', institution: 'eni', period: 'period2019-2023' },
 ];
 
 const experienceData = [
