@@ -69,7 +69,7 @@ const projects = [
     descriptionKey: 'carMusicPartyDescription',
     image: '/CarMusicParty.png',
     technologies: ['React Native', 'NextJs', 'Firebase', 'Socket.IO', 'API', 'Tailwind CSS'],
-    gitUrls: [{ label: 'CarMusicParty', url: 'https://github.com/HarentsoaR/car-music-party' }],
+    liveUrl: 'https://carmusicparty.vercel.app/',
   },
   {
     key: 'dentalPracticeManagementSystem',
