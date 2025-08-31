@@ -5,10 +5,9 @@ import { FaGithub, FaLinkedin, FaGraduationCap, FaMapMarkerAlt, FaBriefcase, FaE
 import { motion, AnimatePresence } from 'framer-motion';
 import { useProfile } from '@/contexts/ProfileContext';
 import { useTranslations } from 'next-intl';
+import { TypeAnimation } from 'react-type-animation';
 import { FiChevronDown, FiX } from 'react-icons/fi';
 import React from 'react';
-import { RotatingText } from '@/components/animate-ui/text/rotating'; // Import new component
-import { RollingText } from '@/components/animate-ui/text/rolling';   // Import new component
 
 type TranslationFunction = ReturnType<typeof useTranslations>;
 
@@ -72,27 +71,21 @@ const CollapsedHero: React.FC<{ onToggle: () => void; t: TranslationFunction }> 
       <Image src="/usages/pfp.jpg" alt="Harentsoa" layout="fill" objectFit="cover" className="rounded-full shadow-lg border-2 border-[#76ABAE]" priority />
     </motion.div>
     <motion.h1 layoutId="hero-title" className="text-4xl md:text-6xl font-bold text-[#EEEEEE] mb-4">
-      {t('Hero.greeting')}{' '}
-      <RollingText
-        className="inline-block text-[#76ABAE]"
-        text={[t('Hero.name')]}
-        duration={2000} // Duration for the name rolling in
-      />.
+      {t('Hero.greeting')} <span className="text-[#76ABAE]">Harentsoa</span>.
     </motion.h1>
-    <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-20 flex flex-col items-center justify-center">
-      <div className="flex items-center justify-center flex-wrap"> {/* Use flex-wrap for responsiveness */}
-        <span className="mr-2">{t('Hero.developerPrefix')}</span>
-        <RotatingText
-          className="inline-block text-[#76ABAE] font-bold"
-          text={[t('Hero.fullstackRole'), t('Hero.mobileRole'), t('Hero.webRole')]}
-          duration={3500} // Increased duration for a slower animation
-        />
-        <span className="ml-2">{t('Hero.developerSuffix')}</span>
-      </div>
-      <RollingText
-        className="text-[#EEEEEE]/70 text-center text-lg md:text-xl mt-2"
-        text={[t('Hero.dynamicBioPhrase1'), t('Hero.dynamicBioPhrase2'), t('Hero.dynamicBioPhrase3')]}
-        duration={4000} // Increased duration for a slower animation
+    <motion.div layoutId="hero-subtitle" className="text-xl md:text-2xl text-[#EEEEEE]/80 mb-8 h-20 md:h-10 flex items-center justify-center"> {/* Adjusted height and added flex for vertical centering */}
+      <TypeAnimation 
+        sequence={[
+          t('Hero.role1'), 2000, 
+          t('Hero.role2'), 2000, 
+          t('Hero.role3'), 2000,
+          t('Hero.dynamicBioPhrase1'), 1500,
+          t('Hero.dynamicBioPhrase2'), 1500,
+          t('Hero.dynamicBioPhrase3'), 1500,
+        ]} 
+        wrapper="span" 
+        cursor={true} 
+        repeat={Infinity} 
       />
     </motion.div>
     <motion.button
