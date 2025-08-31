@@ -15,27 +15,27 @@ interface SplittingTextProps {
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
-  visible: (delay: number) => ({
+  visible: (customProps: { delay: number; stagger: number }) => ({
     opacity: 1,
     transition: {
-      delayChildren: delay / 1000, // Convert ms to seconds for Framer Motion
-      staggerChildren: 0.05, // Default stagger
+      delayChildren: customProps.delay / 1000, // Convert ms to seconds for Framer Motion
+      staggerChildren: customProps.stagger,
     },
   }),
 };
 
 const itemVariants: Variants = {
   hidden: { y: "100%", opacity: 0 }, // Start from below, fully transparent
-  visible: {
+  visible: (duration: number) => ({
     y: "0%",
     opacity: 1,
     transition: {
       type: 'spring',
       damping: 12,
       stiffness: 100,
-      duration: 0.6, // Default duration
+      duration: duration,
     },
-  },
+  }),
 };
 
 export const SplittingText: React.FC<SplittingTextProps> = ({
@@ -55,13 +55,14 @@ export const SplittingText: React.FC<SplittingTextProps> = ({
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      custom={delay} // Pass delay as custom prop to containerVariants
+      custom={{ delay, stagger }} // Pass delay and stagger as custom prop to containerVariants
     >
       {words.map((word, wordIndex) => (
         <span key={wordIndex} className="inline-block whitespace-nowrap mr-1"> {/* Added mr-1 here */}
           {type === 'words' ? (
             <motion.span
               variants={itemVariants}
+              custom={duration} // Pass duration as custom prop to itemVariants
               className={`inline-block ${wordClassName ? wordClassName(word, wordIndex) : ''}`}
             >
               {word}
@@ -71,6 +72,7 @@ export const SplittingText: React.FC<SplittingTextProps> = ({
               <motion.span
                 key={`${wordIndex}-${charIndex}`}
                 variants={itemVariants}
+                custom={duration} // Pass duration as custom prop to itemVariants
                 className={`inline-block ${wordClassName ? wordClassName(char, charIndex) : ''}`}
               >
                 {char}
